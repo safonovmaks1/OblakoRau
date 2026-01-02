@@ -1,0 +1,109 @@
+@use 'helpers' as *;
+
+.contacts {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 2rem;
+
+	@include respond(lg) {
+		grid-template-columns: 1fr;
+	}
+
+	&__images {
+		margin-bottom: 2rem;
+	}
+
+	&__image {
+		width: 100%;
+		border-radius: var(--radius-xl);
+	}
+
+	&__text {
+		margin-bottom: 2.5rem;
+		font-size: var(--font-size-body-lg);
+		font-weight: 400;
+		color: var(--black);
+	}
+
+	&__blocks {
+		margin-bottom: 2.5rem;
+	}
+
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1.25rem 0.625rem;
+
+		@include respond(md) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__item {
+		font-size: var(--font-size-body-lg);
+		font-weight: 400;
+		line-height: 1.5;
+		color: var(--black);
+
+		& span {
+			display: block;
+			font-size: var(--font-size-small);
+			font-weight: 400;
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+			color: var(--gray-400);
+		}
+
+		& a {
+			font-size: var(--font-size-body-lg);
+			font-weight: 400;
+			line-height: 1.5;
+			text-decoration: none;
+			color: var(--black);
+		}
+	}
+
+	&__footer {
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+		margin-bottom: 2rem;
+	}
+
+	&__socials {
+		display: flex;
+		gap: 1rem;
+
+		&-line {
+			width: 100%;
+		}
+	}
+
+	&__socials-link {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 2.8rem;
+		height: 2.8rem;
+		border: 1px solid transparent;
+		border-radius: 50%;
+		transition: 0.3s;
+
+		&-tg {
+			background-color: var(--telegram);
+		}
+
+		&-wa {
+			background-color: var(--whatsapp);
+		}
+
+		@include hover {
+			background-color: var(--gray-500);
+		}
+	}
+
+	&__map {
+		overflow: hidden;
+		border-radius: var(--radius-xl);
+	}
+}

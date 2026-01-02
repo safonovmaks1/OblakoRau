@@ -1,0 +1,20 @@
+@use 'helpers' as *;
+
+.policy-link {
+	display: flex;
+	align-items: center;
+	gap: 0.3rem;
+	font-size: var(--font-size-small);
+	letter-spacing: 0.1em;
+	white-space: nowrap;
+	text-decoration: none;
+	text-transform: uppercase;
+
+	@include hover {
+		color: var(--gray-600);
+
+		svg {
+			fill: var(--gray-600);
+		}
+	}
+}

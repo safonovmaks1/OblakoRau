@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		@@include('../partials/_config/head.html', {"title": "Магазин брендовой одежды OBLACKO RAI"})
+	</head>
+	<body>
+		@@include('../partials/header.html')
+		<!-- header -->
+		<main>
+			<section class="section">
+				<div class="container">
+					<header class="section-header">
+						<h2 class="section-header__title section-header__title--big">Текущие заказы</h2>
+					</header>
+					<!--  -->
+					<nav class="breadcrumbs" aria-label="Хлебные крошки">
+						<ul class="breadcrumbs__list">
+							<li class="breadcrumbs__item">
+								<a class="breadcrumbs__link" href="/">Главная</a>
+							</li>
+							<li class="breadcrumbs__item">
+								<a class="breadcrumbs__link" href="user.html">Личный кабинет</a>
+							</li>
+							<li class="breadcrumbs__item">
+								<a class="breadcrumbs__link" href="user-current-order.html">Текущие заказы</a>
+							</li>
+							<li class="breadcrumbs__item">
+								<span class="breadcrumbs__link" aria-current="page">Информация о заказе № 2802</span>
+							</li>
+						</ul>
+					</nav>
+					<!--  -->
+					<div class="section__wrapper">
+						<aside class="d-none d-lg-block">
+							<nav class="left-menu" aria-label="Дополнительное меню">
+								<ul class="left-menu__list">
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="user.html">Личный кабинет</a>
+									</li>
+									<li class="left-menu__item">
+										<a class="left-menu__link left-menu__link--active" href="user-current-order.html">Текущие заказы</a>
+									</li>
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="404.html">Личный счет</a>
+									</li>
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="user-profile.html">Профиль</a>
+									</li>
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="user-history-order.html">История заказов</a>
+									</li>
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="404.html">Избранные товары</a>
+									</li>
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="404.html">Корзина</a>
+									</li>
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="user-subscribe.html">Подписки</a>
+									</li>
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="404.html">Контакты</a>
+									</li>
+								</ul>
+							</nav>
+						</aside>
+						<!--  -->
+						<div class="section__content">
+							<div class="orders-group">
+								<h3 class="orders-group__title">Мой заказ №2802, создан 07.07.2025</h3>
+								<hr class="orders-group__line" />
+							</div>
+
+							<article class="order-card">
+								<div class="order-card__header">
+									<h4 class="order-card__title">
+										Заказ № 2802 от 07.07.2025
+										<span class="order-card__time">18:57:30</span>,
+										<span>1 товар на сумму 25 000 ₽</span>
+									</h4>
+								</div>
+								<!-- -->
+								<div class="order-card__section">
+									<h5 class="order-card__subtitle">Информация о заказе</h5>
+									<!--  -->
+									<div class="order-summary">
+										<div class="order-summary__item">
+											<div class="order-summary__label">Покупатель</div>
+											<div class="order-summary__value">Смирнова Виктория</div>
+										</div>
+
+										<div class="order-summary__item">
+											<div class="order-summary__label">Текущий статус, от 07.07.2025:</div>
+											<div class="order-summary__value">Принят, ожидается оплата</div>
+										</div>
+
+										<div class="order-summary__item">
+											<div class="order-summary__label">Сумма:</div>
+											<div class="order-summary__value">25 000 ₽</div>
+										</div>
+									</div>
+									<!--  -->
+									<div class="accordion" data-single="true">
+										<div class="accordion__item">
+											<button type="button" class="accordion__header">
+												<span class="accordion__title text-sm width-sm">Подробнее</span>
+												<span class="accordion__icon">
+													<svg><use xlink:href="images/sprite.symbol.svg#arrow-down-s"></use></svg>
+												</span>
+											</button>
+											<div class="accordion__content">
+												<div class="accordion__body"><hr /></div>
+												<div class="accordion__body">
+													<h3>Информация о пользователе</h3>
+												</div>
+												<div class="accordion__body">
+													<div class="order-user">
+														<div class="order-user__label">Логин:</div>
+														<div class="order-user__value">Смирнова Виктория</div>
+													</div>
+												</div>
+												<div class="accordion__body">
+													<div class="order-user">
+														<div class="order-user__label">E-mail адрес:</div>
+														<div class="order-user__value">Смирнова Виктория</div>
+													</div>
+												</div>
+
+												<div class="accordion__body">
+													<div class="order-user">
+														<div class="order-user__label">Ф.И.О.:</div>
+														<div class="order-user__value">Смирнова Виктория</div>
+													</div>
+												</div>
+
+												<div class="accordion__body">
+													<div class="order-user">
+														<div class="order-user__label">Телефон:</div>
+														<div class="order-user__value">Смирнова Виктория</div>
+													</div>
+												</div>
+
+												<div class="accordion__body">
+													<div class="order-user">
+														<div class="order-user__label">Город:</div>
+														<div class="order-user__value">Смирнова Виктория</div>
+													</div>
+													<div class="order-card__user-info"></div>
+												</div>
+												<div class="accordion__body">
+													<div class="order-user">
+														<div class="order-user__label">Адрес доставки:</div>
+														<div class="order-user__value">Смирнова Виктория</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!--  -->
+
+								<div class="order-card__section">
+									<div class="order-card__row">
+										<h5 class="order-card__subtitle">Оплата</h5>
+										<div class="order-card__info">
+											<p class="order-card__text">Счет № 2802/1 от 07.07.2025, Перевод на карту</p>
+
+											<div class="order-card__status ml-auto">
+												<div class="label label-error">не оплачено</div>
+											</div>
+										</div>
+
+										<p class="order-card__text">Сумма к оплате: 25 400 ₽</p>
+										<p class="order-card__text hidden js-payment-info">Оплата производится переводом на банковскую карту (Сбер, Тинькофф, Альфа)</p>
+
+										<div class="accordion mt-2" data-single="true">
+											<div class="accordion__item">
+												<button type="button" class="accordion__header p-0">
+													<span class="accordion__title text-sm">Сменить способ оплаты</span>
+													<span class="accordion__icon">
+														<svg><use xlink:href="images/sprite.symbol.svg#arrow-down-s"></use></svg>
+													</span>
+												</button>
+												<div class="accordion__content">
+													<div class="accordion__body">
+														<form id="change-payment-2802" class="payment-switch">
+															<div class="payment-switch__body">
+																<div class="checkbox radio-checkbox">
+																	<input id="pay-cash-2802" type="radio" name="payment" value="cash" class="radio-checkbox__input" />
+																	<label for="pay-cash-2802" class="radio-checkbox__label">
+																		<span class="radio-checkbox__circle"></span>
+																		<span class="radio-checkbox__text">Наличные курьеру</span>
+																	</label>
+																</div>
+																<div class="checkbox radio-checkbox">
+																	<input id="pay-card-2802" type="radio" name="payment" value="card" class="radio-checkbox__input" checked />
+																	<label for="pay-card-2802" class="radio-checkbox__label">
+																		<span class="radio-checkbox__circle"></span>
+																		<span class="radio-checkbox__text">Перевод на карту</span>
+																	</label>
+																</div>
+															</div>
+														</form>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<button type="button" class="button js-pay-btn">ОПЛАТИТЬ</button>
+								</div>
+
+								<div class="order-card__section">
+									<div class="order-card__row">
+										<h5 class="order-card__subtitle">Доставка</h5>
+										<div class="order-card__info">
+											<p class="order-card__text">Отгрузка № 2802/2, стоимость доставки 0 ₽</p>
+											<div class="order-card__status ml-auto">
+												<div class="label label-success">отгружено</div>
+											</div>
+										</div>
+
+										<p class="order-card__text">Статус: ожидает обработки</p>
+										<p class="order-card__text">Служба: МСК — Курьером бесплатно</p>
+									</div>
+								</div>
+
+								<div class="order-card__section">
+									<h5 class="order-card__subtitle">Товары</h5>
+									<div class="cart-table">
+										<div class="cart-table__header">
+											<div class="cart-col cart-col--name">Наименование</div>
+											<div class="cart-col cart-col--price">Цена</div>
+											<div class="cart-col cart-col--discount">Скидка</div>
+											<div class="cart-col cart-col--qty">Количество</div>
+											<div class="cart-col cart-col--sum">Сумма</div>
+										</div>
+
+										<div class="cart-item">
+											<div class="cart-col cart-col--name cart-item__info">
+												<div class="cart-item__img">
+													<img src="images/shoes-kander.jpg" alt="Туфли Kander" />
+												</div>
+												<div class="cart-item__text">
+													<a href="#" class="cart-item__title">ТУФЛИ KANDER</a>
+													<div class="cart-item__meta">Размер обуви: 36 (23 см)</div>
+												</div>
+											</div>
+
+											<div class="cart-col cart-col--price">
+												<span class="cart-mobile-label">Цена:</span>
+												<span class="cart-value">25 400 ₽</span>
+											</div>
+
+											<div class="cart-col cart-col--discount">
+												<span class="cart-mobile-label">Скидка:</span>
+												<span class="cart-value">0 ₽</span>
+											</div>
+
+											<div class="cart-col cart-col--qty">
+												<span class="cart-mobile-label">Количество:</span>
+												<span class="cart-value">1 шт.</span>
+											</div>
+
+											<div class="cart-col cart-col--sum">25 400 ₽</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="order-totals">
+									<div class="order-totals__row">
+										<div class="order-totals__label">Стоимость доставки:</div>
+										<div class="order-totals__value">0 ₽</div>
+									</div>
+
+									<div class="order-totals__row order-totals__row--total">
+										<div class="order-totals__label">Итого:</div>
+										<div class="order-totals__value">25 400 ₽</div>
+									</div>
+								</div>
+
+								<div class="order-card__footer">
+									<button class="button button--sm" type="button">ПОВТОРИТЬ</button>
+									<a href="order-canceled.html" class="button button--sm button--inverse">ОТМЕНИТЬ ЗАКАЗ</a>
+								</div>
+							</article>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		@@include('../partials/footer.html')
+		<!-- footer -->
+		@@include('../partials/modals.html')
+		<!-- Modals -->
+		@@include('../partials/scroll-up.html')
+		<!-- Scroll - up -->
+	</body>
+</html>

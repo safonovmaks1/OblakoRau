@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		@@include('../partials/_config/head.html', {"title": "Оформление заказа | OBLACKO RAI"})
+	</head>
+	<body>
+		@@include('../partials/header.html')
+
+		<main>
+			<section class="section">
+				<div class="container">
+					<header class="section-header">
+						<h2 class="section-header__title section-header__title--big">Заказ оформлен</h2>
+					</header>
+
+					<div class="checkout-success">
+						<p class="checkout-success__text">Ваш заказ <span>№2800</span> от 07.07.2025 17:43 успешно создан.</p>
+
+						<p class="checkout-success__text">В ближайшее время с Вами свяжется наш менеджер по телефону или WhatsApp для уточнения деталей по доставке.</p>
+
+						<p class="checkout-success__text">Благодарим за заказ!</p>
+
+						<p class="checkout-success__text">Подписывайтесь на наш <a href="https://t.me/yourchannel">Telegram канал</a>.</p>
+					</div>
+				</div>
+			</section>
+
+			@@include('../partials/slider-viewed.html', {"title": "Персональные рекомендации"})
+		</main>
+
+		@@include('../partials/footer.html')
+		<!--  -->
+		@@include('../partials/modals.html')
+		<!--  -->
+		@@include('../partials/scroll-up.html')
+	</body>
+</html>

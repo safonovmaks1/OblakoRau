@@ -1,0 +1,70 @@
+@use 'helpers' as *;
+
+.text-content {
+	margin-bottom: 2rem;
+	font-size: var(--font-size-body-lg);
+	line-height: 1.5;
+	color: var(--black);
+
+	& > * {
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	h2,
+	h3,
+	h4 {
+		margin-top: 0;
+		margin-bottom: 1rem;
+		font-weight: 700;
+		line-height: 1.2;
+		text-transform: uppercase;
+	}
+
+	h2 {
+		font-size: var(--font-size-h3);
+	}
+
+	h3 {
+		font-size: var(--font-size-body-lg);
+	}
+
+	p,
+	address {
+		margin-bottom: 0.5rem;
+	}
+
+	ul,
+	ol {
+		margin-bottom: 1rem;
+		padding-left: 2rem;
+	}
+
+	ul {
+		list-style: disc;
+	}
+
+	ol {
+		list-style: decimal;
+	}
+
+	li {
+		margin-bottom: 0.1rem;
+		padding-left: 0.5rem;
+	}
+
+	a {
+		text-decoration: underline;
+	}
+
+	.icon-emoji {
+		display: inline-block;
+		margin-right: 0.3rem;
+		font-style: normal;
+	}
+}
+
+.text-center {
+	text-align: center;
+}

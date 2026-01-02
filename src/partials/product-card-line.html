@@ -1,0 +1,76 @@
+<article class="product-card-line">
+	<div class="product-card-line__image-box">
+		<div class="product-images">
+			<img src="@@images" width="200" height="200" alt="Сумка Louis Vuitton" loading="lazy" />
+		</div>
+
+		<button type="button" class="button button--inverse product-card-line__button product-card-line__quick-view">
+			<svg class="icon">
+				<use xlink:href="images/sprite.symbol.svg#eye"></use>
+			</svg>
+			быстрый просмотр
+		</button>
+	</div>
+
+	<div class="product-card-line__content">
+		<div class="product-card-line__info">
+			<h2 class="product-name">@@title</h2>
+			<p class="product-article">Арт.: 77925</p>
+		</div>
+
+		<div class="product-accordion">
+			<div class="accordion" data-single="true">
+				<div class="accordion__item">
+					<button type="button" class="accordion__header product-accordion__header">
+						<span class="accordion__icon">
+							<svg class="icon"><use xlink:href="images/sprite.symbol.svg#arrow-down-s"></use></svg>
+						</span>
+						<span class="accordion__title">Характеристики</span>
+					</button>
+					<div class="accordion__content">
+						<div class="accordion__body product-accordion__body">
+							<ul class="params-list">
+								<li><span>Цвет:</span> Черный</li>
+								<li><span>Материал:</span> Кожа</li>
+								<li><span>Сезон:</span> Демисезон</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<button type="button" class="button button--inverse product-card-line__button product-card-line__favorite">
+			<svg class="icon">
+				<use xlink:href="images/sprite.symbol.svg#heart"></use>
+			</svg>
+			в избранное
+		</button>
+	</div>
+
+	<div class="product-card-line__actions">
+		<div class="product-card-line__price-box">
+			<p class="product-price">34 000 ₽</p>
+		</div>
+
+		<div class="size-options">
+			<div class="size-options__title">Размер одежды<span> - S (42)</span></div>
+			<div class="size-options__wrapper">
+				<button class="button button--inverse size-button">S (42)</button>
+				<button class="button button--inverse size-button">M (44)</button>
+				<button class="button button--inverse size-button">L (46)</button>
+			</div>
+		</div>
+
+		<div class="product-wrapper">
+			<div class="counter">
+				<button class="counter__item counter__minus">-</button>
+				<span class="counter__item counter__number">0</span>
+				<button class="counter__item counter__plus">+</button>
+			</div>
+			<button class="button add-to-cart" type="button">В корзину</button>
+		</div>
+
+		<button type="button" class="button button--w100" data-modal-open="#buy">купить в 1 клик</button>
+	</div>
+</article>

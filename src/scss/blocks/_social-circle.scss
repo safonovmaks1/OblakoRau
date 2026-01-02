@@ -1,0 +1,26 @@
+@use 'helpers' as *;
+
+.social-circle {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 2.5rem;
+	height: 2.5rem;
+	border: var(--border);
+	border-radius: 50%;
+	transition: 0.3s;
+
+	&-tg {
+		@include hover {
+			background-color: var(--telegram);
+			border: 1px solid var(--telegram);
+		}
+	}
+
+	&-wa {
+		@include hover {
+			background-color: var(--whatsapp);
+			border: 1px solid var(--whatsapp);
+		}
+	}
+}

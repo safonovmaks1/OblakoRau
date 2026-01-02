@@ -1,0 +1,38 @@
+@use 'helpers' as *;
+
+.rating {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem; /* Небольшой отступ между звездами */
+	margin-top: 0.625rem;
+
+	&__icon {
+		width: 1.5rem;
+		height: 1.5rem;
+		cursor: pointer;
+		transition: fill 0.2s ease; /* Плавная смена цвета */
+		fill: var(--gray-400); /* Цвет неактивной звезды (серый) */
+
+		/* Класс, который будет добавлять JS */
+		&.active {
+			fill: #f1c40f; /* Золотой (Gold) */
+		}
+	}
+
+	&__text {
+		margin-left: 0.625rem;
+		font-size: var(--font-size-body);
+		color: var(--gray-500);
+
+		&::before {
+			content: '—';
+			margin-right: .5rem;
+			color: var(--gray-500);
+		}
+
+		/* Если текст пустой, скрываем дефис */
+		&:empty {
+			display: none;
+		}
+	}
+}

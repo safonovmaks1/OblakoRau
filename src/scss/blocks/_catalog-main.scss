@@ -1,0 +1,100 @@
+@use 'helpers' as *;
+
+.catalog-main {
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(35rem, 1fr));
+		gap: 0.5rem;
+
+		@include respond(md) {
+			grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+		}
+
+		&--small {
+			grid-template-columns: repeat(auto-fill, minmax(21rem, 1fr));
+
+			@include respond(xl) {
+				grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+			}
+
+			@include respond(md) {
+				grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+			}
+		}
+	}
+
+	&__item {
+		display: flex;
+		justify-content: center;
+		align-items: self-start;
+		gap: 1rem;
+		padding: 1.25rem;
+		background-color: var(--white);
+		border: var(--border);
+		border-radius: var(--radius);
+		transition: box-shadow 0.2s ease;
+
+		@include hover {
+			box-shadow: var(--shadow);
+		}
+	}
+
+	&__item-image-link {
+		flex-shrink: 0;
+	}
+
+	&__item-image {
+		width: 5rem;
+		height: 5rem;
+		object-fit: cover;
+		border-radius: var(--radius);
+
+		@include respond(xl) {
+			width: 3.5rem;
+			height: 3.5rem;
+		}
+	}
+
+	&__item-block {
+		flex: 1;
+	}
+
+	&__item-title {
+		margin: 0 0 0.5rem;
+		font-size: var(--font-size-body-lg);
+		font-weight: 700;
+		text-decoration: none;
+		color: var(--black);
+	}
+
+	// &__item-link {}
+
+	&__item-list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.6rem;
+
+		& li {
+			position: relative;
+
+			&::before {
+				content: '—';
+				margin-right: 0.3rem;
+				color: var(--gray-500);
+			}
+
+			&:first-child::before {
+				content: '';
+			}
+		}
+	}
+
+	&__button-load-more {
+		font-size: var(--font-size-body-lg);
+		text-decoration: none;
+		color: var(--black);
+		background-color: transparent;
+		border: none;
+		outline: none;
+	}
+}

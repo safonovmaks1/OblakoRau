@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		@@include('../partials/_config/head.html', {"title": "Магазин брендовой одежды OBLACKO RAI"})
+	</head>
+	<body>
+		@@include('../partials/header.html')
+		<!-- header -->
+		<main>
+			<section class="section">
+				<div class="container">
+					<header class="section-header">
+						<h2 class="section-header__title section-header__title--big">Профиль пользователя</h2>
+					</header>
+					<!--  -->
+					<nav class="breadcrumbs" aria-label="Хлебные крошки">
+						<ul class="breadcrumbs__list">
+							<li class="breadcrumbs__item">
+								<a class="breadcrumbs__link" href="/">Главная</a>
+							</li>
+							<li class="breadcrumbs__item">
+								<a class="breadcrumbs__link" href="user.html">Личный кабинет</a>
+							</li>
+							<li class="breadcrumbs__item">
+								<span class="breadcrumbs__link" aria-current="page">Профиль</span>
+							</li>
+						</ul>
+					</nav>
+					<!--  -->
+					<div class="section__wrapper">
+						<aside class="d-none d-lg-block">
+							<nav class="left-menu" aria-label="Дополнительное меню">
+								<ul class="left-menu__list">
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="user.html">Личный кабинет</a>
+									</li>
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="user-current-order.html">Текущие заказы</a>
+									</li>
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="404.html">Личный счет</a>
+									</li>
+									<li class="left-menu__item">
+										<a class="left-menu__link left-menu__link--active" href="user-profile.html">Профиль</a>
+									</li>
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="user-history-order.html">История заказов</a>
+									</li>
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="404.html">Избранные товары</a>
+									</li>
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="404.html">Корзина</a>
+									</li>
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="user-subscribe.html">Подписки</a>
+									</li>
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="404.html">Контакты</a>
+									</li>
+								</ul>
+							</nav>
+						</aside>
+						<!--  -->
+						<div class="section__content">
+							<div class="account-section">
+								<h3 class="account-section__heading">Личные данные</h3>
+
+								<form class="form form--wide" id="user-data" novalidate>
+									<div class="form__body">
+										<div class="form__item">
+											<div class="form__row">
+												<div class="form__field">
+													<div class="form__error"><span>Введите ФИО</span></div>
+													<input name="name" type="text" class="form__input _req" placeholder="Фамилия Имя Отчество" autocomplete="name" />
+												</div>
+												<div class="form__hint">Заполните, чтобы мы знали, как к вам обращаться</div>
+											</div>
+										</div>
+										<!--  -->
+										<div class="form__item">
+											<div class="form__row">
+												<div class="form__field">
+													<div class="form__error"><span>Введите E-mail</span></div>
+													<input name="email" type="text" class="form__input _req" placeholder="E-mail" autocomplete="email" />
+												</div>
+												<div class="form__hint">Для отправки уведомлений о статусе заказа. Логин для входа.</div>
+											</div>
+										</div>
+										<!--  -->
+										<div class="form__item">
+											<div class="form__row">
+												<div class="form__field">
+													<div class="form__error"><span>Введите телефон</span></div>
+													<input name="phone" type="tel" class="form__input _req" placeholder="+7 (___) ____-__-__" autocomplete="tel" />
+												</div>
+												<div class="form__hint">Необходим для уточнения деталей заказа</div>
+											</div>
+										</div>
+										<!--  -->
+										<div class="flex-sb">
+											<button type="submit" class="button">СОХРАНИТЬ ИЗМЕНЕНИЯ</button>
+										</div>
+									</div>
+								</form>
+
+								<p class="alert alert-success js-alert-success hidden">Изменения сохранены</p>
+							</div>
+
+							<div class="account-section">
+								<h3 class="account-section__heading">Сменить пароль</h3>
+
+								<form class="form form--narrow" id="change-pass" novalidate>
+									<div class="form__body">
+										<div class="form__item">
+											<div class="form__field">
+												<div class="form__error"><span>Введите пароль</span></div>
+												<input
+													name="password"
+													type="password"
+													id="new_password"
+													class="form__input _req"
+													placeholder="Новый пароль"
+													autocomplete="new-password"
+													data-password-toggle
+												/>
+
+												<svg class="icon form__icon form__icon-abs">
+													<use xlink:href="images/sprite.symbol.svg#eye-off"></use>
+												</svg>
+											</div>
+											<div class="form__hint">Длина пароля не менее 6 символов.</div>
+										</div>
+										<!--  -->
+										<div class="form__item">
+											<div class="form__field">
+												<div class="form__error"><span>Подтвердите пароль</span></div>
+												<input
+													name="confirm_password"
+													type="password"
+													id="confirm_password"
+													class="form__input _req"
+													placeholder="Подтверждение пароля"
+													autocomplete="new-password"
+													data-password-toggle
+												/>
+
+												<svg class="icon form__icon form__icon-abs">
+													<use xlink:href="images/sprite.symbol.svg#eye-off"></use>
+												</svg>
+											</div>
+										</div>
+										<!--  -->
+										<div class="flex-sb">
+											<button type="submit" class="button">СОХРАНИТЬ ИЗМЕНЕНИЯ</button>
+										</div>
+									</div>
+								</form>
+								<p class="alert alert-success js-alert-success hidden">Пароль успешно изменен</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		@@include('../partials/footer.html')
+		<!-- footer -->
+		@@include('../partials/modals.html')
+		<!-- Modals -->
+		@@include('../partials/scroll-up.html')
+		<!-- Scroll - up -->
+	</body>
+</html>

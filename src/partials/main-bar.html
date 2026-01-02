@@ -1,0 +1,75 @@
+<div class="main-bar">
+	<div class="container main-bar-inner">
+		<button class="menu-burger d-lg-none" id="burgerBtn" aria-label="Меню">
+			<svg class="icon menu-burger__icon">
+				<use xlink:href="images/sprite.symbol.svg#menu"></use>
+			</svg>
+		</button>
+		<!-- /.burger -->
+		<div class="logo">
+			<a class="logo__link" href="/">
+				<img src="images/logo.svg" width="190" height="80" loading="lazy" alt="Магазин брендовой одежды OBLACKO RAI" />
+			</a>
+		</div>
+		<!--  -->
+		<a href="tel:+77777777777" class="phone-block">
+			<svg class="icon">
+				<use xlink:href="images/sprite.symbol.svg#phone"></use>
+			</svg>
+			<span class="d-none d-lg-block"> +7 (777) 777-7777</span>
+		</a>
+		<!--  -->
+
+		<form class="search-block" id="searchForm">
+			<div class="search-input-wrapper d-none d-lg-block">
+				<input type="text" placeholder="Поиск" class="search-input" id="searchInput" autocomplete="off" />
+			</div>
+
+			<div class="search-controls">
+				<div class="search-scope d-none d-lg-block" id="searchScope">
+					<div class="scope-current">
+						<span class="scope-text">Каталог</span>
+						<svg xmlns="http://www.w3.org/2000/svg" width="8" height="5" viewBox="0 0 5 3" class="scope-arrow">
+							<path d="M0,0 L2.5,3 L5,0" fill="#777"></path>
+						</svg>
+					</div>
+
+					<ul class="scope-dropdown">
+						<li data-value="catalog" class="selected">По каталогу</li>
+						<li data-value="all">По всему сайту</li>
+					</ul>
+				</div>
+
+				<button type="submit" class="search-btn" aria-label="Найти">
+					<svg class="icon" width="20" height="20">
+						<use xlink:href="images/sprite.symbol.svg#search"></use>
+					</svg>
+				</button>
+			</div>
+
+			<div class="search-results" id="searchResults"></div>
+		</form>
+		<!--  -->
+		<div class="user-actions">
+			<a href="auth.html" class="user-action d-none d-md-flex" aria-label="Профиль"
+				><svg class="icon">
+					<use xlink:href="images/sprite.symbol.svg#user"></use></svg
+			></a>
+			<a href="favorite.html" class="user-action d-none d-md-flex" aria-label="Избранное">
+				<svg class="icon">
+					<use xlink:href="images/sprite.symbol.svg#heart"></use>
+				</svg>
+				<span class="badge">100</span>
+			</a>
+			<div class="tooltip__wrapper">
+				<a href="cart.html" class="user-action" aria-label="Корзина">
+					<svg class="icon">
+						<use xlink:href="images/sprite.symbol.svg#shopping-cart"></use>
+					</svg>
+					<span class="badge">0</span>
+				</a>
+				<span class="tooltip tooltip-cart d-none d-lg-block"> @@include('./tooltip-cart-empty.html') </span>
+			</div>
+		</div>
+	</div>
+</div>

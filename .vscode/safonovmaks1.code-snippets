@@ -1,0 +1,94 @@
+{
+	// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": ["console.log('$1');", "$2"],
+	// 	"description": "Log output to console"
+	// },
+
+	"consolelog": {
+		"scope": "javascript,typescript",
+		"prefix": "g-log",
+		"body": ["console.log(`$1:`, $1);"],
+		"description": "consolelog"
+	},
+
+	"HTML section": {
+		"scope": "html",
+		"prefix": "g-section",
+		"body": [
+			"<section class=\"section container\">",
+			"  <header class=\"section__header\">",
+			"    <h2 class=\"section__title\">Section title</h2>",
+			"  </header>",
+			"  <div class=\"section__body\">Section Content</div>",
+			"</section>"
+		],
+		"description": "HTML section"
+	},
+
+	"Images": {
+		"scope": "html",
+		"prefix": "g-img",
+		"body": ["<img class=\"${1}\" src=\"images/${2}\" alt=\"\" width=\"100\" height=\"100\" loading=\"lazy\" />"],
+		"description": "images"
+	},
+
+	"button": {
+		"scope": "html",
+		"prefix": "g-btn",
+		"body": ["<button class=\"button ${1}\" type=\"button\">${2}</button>"],
+		"description": "button"
+	},
+
+	"Visually-hidden snippet": {
+		"scope": "html",
+		"prefix": "g-hidden",
+		"body": ["<span class=\"visually-hidden\">$1</span>"],
+		"description": "Visually-hidden snippet"
+	},
+
+	"Snippet for use svg": {
+		"scope": "html",
+		"prefix": "g-use",
+		"body": ["<svg class=\"icon $2\">", "<use xlink:href=\"images/sprite.symbol.svg#$1\"></use>", "</svg>"],
+		"description": "Snippet for SVG sprite"
+	},
+
+	"Scss Helpers": {
+		"scope": "scss",
+		"prefix": "g-h",
+		"body": ["@use 'helpers' as *;"],
+		"description": "Snippet for include helpers"
+	},
+
+	"Scss Respond": {
+		"scope": "scss",
+		"prefix": "mq",
+		"body": ["@include respond($1) {$2}"],
+		"description": "Snippet for respond mixin"
+	},
+
+	"Developers List": {
+		"prefix": "dev-list",
+		"body": [
+			"<ul class=\"developer-list\">",
+			"<li class=\"developer-list__item\">",
+			"Designer:",
+			"<a class=\"developer-list__link\" target=\"_blank\" href=\"https://t.me/Mrshmallowww\">Anastasia Ilina</a>",
+			"</li>",
+			"<li class=\"developer-list__item\">",
+			"Developer:",
+			"<a class=\"developer-list__link\" target=\"_blank\" href=\"https://t.me/MaksSafonov\">Maksim Safonov</a>",
+			"</li>",
+			"</ul>"
+		],
+		"description": "developers list"
+	}
+}

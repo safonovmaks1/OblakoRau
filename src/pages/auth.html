@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		@@include('../partials/_config/head.html', {"title": "Магазин брендовой одежды OBLACKO RAI"})
+	</head>
+	<body>
+		@@include('../partials/header.html')
+		<!-- header -->
+		<main>
+			<section class="section">
+				<div class="container">
+					<header class="section-header flex-center">
+						<h2 class="section-header__title section-header__title--big">Авторизация</h2>
+					</header>
+					<!--  -->
+					<nav class="breadcrumbs" aria-label="Хлебные крошки">
+						<ul class="breadcrumbs__list flex-center">
+							<li class="breadcrumbs__item">
+								<a class="breadcrumbs__link" href="/">Главная</a>
+							</li>
+							<li class="breadcrumbs__item">
+								<span class="breadcrumbs__link" aria-current="page">Авторизация</span>
+							</li>
+						</ul>
+					</nav>
+					<!--  -->
+					<div class="section__wrapper">
+						<div class="section__content">
+							<div class="text-content text-center">
+								<p>Авторизировавшись, вы сможете управлять своими личными данными, следить за состоянием заказов.</p>
+							</div>
+
+							<form class="form" id="auth-form" novalidate>
+								<div class="form__body">
+									<div class="form__item">
+										<div class="form__field">
+											<div class="form__error"><span>введите логин</span></div>
+											<input name="name" type="text" class="form__input _req" placeholder="Логин" />
+										</div>
+									</div>
+									<!--  -->
+									<div class="form__item">
+										<div class="form__field">
+											<div class="form__error">
+												<span>введите пароль</span>
+											</div>
+											<input name="password" type="password" id="password" class="form__input _req" placeholder="Пароль" />
+											<svg class="icon form__icon form__icon-abs">
+												<use xlink:href="images/sprite.symbol.svg#eye-off"></use>
+											</svg>
+										</div>
+									</div>
+
+									<div class="flex-sb">
+										<div class="form__item">
+											<div class="form__field">
+												<div class="checkbox switch-container">
+													<input id="me" type="checkbox" name="me" class="switch-input" />
+													<label for="me" class="switch-label">
+														<span class="switch-slider"></span>
+														<span class="switch-text"> Запомнить меня</span>
+													</label>
+												</div>
+											</div>
+										</div>
+
+										<a href="reset-password.html" class="form__label">забыли пароль?</a>
+									</div>
+
+									<div class="flex-sb">
+										<button type="submit" class="button">ВОЙТИ</button>
+										<a href="registration.html" class="button button--inverse">РЕГИСТРАЦИЯ</a>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		@@include('../partials/footer.html')
+		<!-- footer -->
+		@@include('../partials/modals.html')
+		<!-- Modals -->
+		@@include('../partials/scroll-up.html')
+		<!-- Scroll - up -->
+	</body>
+</html>

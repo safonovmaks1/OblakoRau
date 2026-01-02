@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		@@include('../partials/_config/head.html', {"title": "Магазин брендовой одежды OBLACKO RAI"})
+	</head>
+	<body>
+		@@include('../partials/header.html')
+		<!-- header -->
+		<main>
+			<section class="section">
+				<div class="container">
+					<header class="section-header">
+						<h2 class="section-header__title section-header__title--big">Отзывы</h2>
+					</header>
+					<!--  -->
+					<nav class="breadcrumbs" aria-label="Хлебные крошки">
+						<ul class="breadcrumbs__list">
+							<li class="breadcrumbs__item">
+								<a class="breadcrumbs__link" href="/">Главная</a>
+							</li>
+							<li class="breadcrumbs__item">
+								<a class="breadcrumbs__link" href="about.html">О компании</a>
+							</li>
+							<li class="breadcrumbs__item">
+								<span class="breadcrumbs__link" aria-current="page">Отзывы</span>
+							</li>
+						</ul>
+					</nav>
+					<!--  -->
+					<div class="section__wrapper">
+						<aside class="d-none d-lg-block">
+							<nav class="left-menu" aria-label="Дополнительное меню">
+								<ul class="left-menu__list">
+									<li class="left-menu__item">
+										<a class="left-menu__link left-menu__link--active" href="reviews.html">Отзывы</a>
+									</li>
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="contacts.html">Контакты</a>
+									</li>
+								</ul>
+							</nav>
+						</aside>
+						<!--  -->
+						<div class="section__content">
+							<div class="reviews">
+								<div class="reviews__header">
+									<button class="button reviews__header-button" type="button" data-modal-open="#feedback">оставить свой отзыв</button>
+									<hr class="reviews__header-line" />
+								</div>
+
+								<div class="slider-reviews slider-reviews--mini js-slider-root" data-slider-type="mini">
+									<div class="slider-reviews__nav">
+										<button type="button" class="slider-reviews__prev slider-reviews__prev--gray js-slider-prev" aria-label="Предыдущий слайд">
+											<svg class="icon slider-reviews__icon">
+												<use xlink:href="images/sprite.symbol.svg#arrow-left-s"></use>
+											</svg>
+										</button>
+
+										<button type="button" class="slider-reviews__next slider-reviews__next--gray js-slider-next" aria-label="Следующий слайд">
+											<svg class="icon slider-reviews__icon">
+												<use xlink:href="images/sprite.symbol.svg#arrow-right-s"></use>
+											</svg>
+										</button>
+									</div>
+
+									<div class="swiper slider-reviews__container slider-reviews__container--mini js-swiper-container">
+										<div class="swiper-wrapper">
+											<div class="swiper-slide slider-reviews__slide slider-reviews__slide--mini">
+												<img class="slider-reviews__img" src="images/feedback.jpg" alt="Отзыв клиента" width="523" height="500" loading="lazy" />
+											</div>
+											<div class="swiper-slide slider-reviews__slide slider-reviews__slide--mini">
+												<img class="slider-reviews__img" src="images/feedback.jpg" alt="Отзыв клиента" width="523" height="500" loading="lazy" />
+											</div>
+											<div class="swiper-slide slider-reviews__slide slider-reviews__slide--mini">
+												<img class="slider-reviews__img" src="images/feedback.jpg" alt="Отзыв клиента" width="523" height="500" loading="lazy" />
+											</div>
+											<div class="swiper-slide slider-reviews__slide slider-reviews__slide--mini">
+												<img class="slider-reviews__img" src="images/feedback.jpg" alt="Отзыв клиента" width="523" height="500" loading="lazy" />
+											</div>
+											<div class="swiper-slide slider-reviews__slide slider-reviews__slide--mini">
+												<img class="slider-reviews__img" src="images/feedback.jpg" alt="Отзыв клиента" width="523" height="500" loading="lazy" />
+											</div>
+											<div class="swiper-slide slider-reviews__slide slider-reviews__slide--mini">
+												<img class="slider-reviews__img" src="images/feedback.jpg" alt="Отзыв клиента" width="523" height="500" loading="lazy" />
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		@@include('../partials/footer.html')
+		<!-- footer -->
+		@@include('../partials/modals.html')
+		<!-- Modals -->
+		@@include('../partials/scroll-up.html')
+		<!-- Scroll - up -->
+	</body>
+</html>

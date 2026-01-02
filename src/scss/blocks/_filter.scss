@@ -1,0 +1,211 @@
+@use 'helpers' as *;
+
+.filter-group {
+	position: relative;
+	display: inline-block;
+	color: var(--black);
+
+	@include respond(md) {
+		&:nth-child(7) {
+			.filter-dropdown {
+				right: 0;
+				left: auto;
+			}
+		}
+	}
+
+	.sort-btn {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		padding: 8px 0;
+		font-weight: 500;
+		white-space: nowrap;
+		background: transparent;
+		border: none;
+		cursor: pointer;
+		transition: color 0.2s ease;
+	}
+
+	& svg {
+		width: 1rem;
+		height: 1rem;
+		transition: transform 0.2s;
+		fill: currentColor;
+	}
+
+	.filter-dropdown {
+		position: absolute;
+		z-index: 100;
+		top: 100%;
+		left: 0;
+		display: none;
+		margin-top: 8px;
+		background-color: #ffffff;
+		box-shadow: var(--shadow);
+	}
+
+	&.is-active {
+		.filter-dropdown {
+			display: block;
+			animation: slide-down 0.2s ease-out;
+		}
+
+		.sort-btn svg {
+			transform: rotate(180deg);
+		}
+	}
+}
+
+.filter-list {
+	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+	max-height: 15.625rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	&::-webkit-scrollbar {
+		width: 3px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: #cccccc;
+	}
+
+	&__button {
+		margin-top: 0.4rem;
+		padding: 0;
+		text-decoration: underline dotted;
+	}
+}
+
+.filter-dropdown--price {
+	min-width: 15rem;
+	padding: 1rem;
+}
+
+.filter-dropdowns {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.filter-btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&--text {
+		margin-left: 0.6rem;
+		font-size: var(--font-size-body);
+		font-weight: 700;
+		text-decoration: underline dotted;
+	}
+
+	& svg {
+		fill: currentColor;
+	}
+}
+
+.price {
+	&-title {
+		margin-bottom: 1.5rem;
+	}
+
+	&-inputs {
+		display: flex;
+		align-items: center;
+		gap: 0.625rem;
+
+		.form__input {
+			appearance: textfield;
+			width: 50%;
+			height: 2.5rem;
+			padding: 0 0.625rem;
+			font-size: var(--font-size-body);
+			text-align: left;
+			border: var(--border);
+			border-radius: var(--radius-sm);
+
+			&:focus {
+				border-color: var(--black);
+				outline: none;
+			}
+
+			&::-webkit-outer-spin-button,
+			&::-webkit-inner-spin-button {
+				appearance: none;
+				margin: 0;
+			}
+		}
+	}
+}
+
+// .sort-inner-wrapper {
+
+// 	/* Выпадающий список */
+// 	& > .filter-dropdown {
+// 		position: absolute;
+// 		z-index: 50; /* Поверх всего */
+// 		top: 100%;
+// 		left: 0;
+
+// 		/* === ИСПРАВЛЕНИЕ 1: Жестко скрываем по умолчанию === */
+// 		display: none !important;
+// 		width: 100%;
+// 		padding: 0 !important;
+// 		background: #ffffff; /* Белый фон списка */
+// 		border-radius: 0 0 4px 4px;
+// 		box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+// 		.sort-list {
+// 			margin: 0;
+// 			padding: 0;
+// 			list-style: none;
+
+// 			&__item {
+// 				padding: 10px 1rem;
+// 				font-size: 14px;
+// 				color: var(--black);
+// 				background: #ffffff;
+// 				cursor: pointer;
+
+// 				&:hover {
+// 					background-color: #f4f4f4;
+// 				}
+
+// 				&.is-active {
+// 					font-weight: 700;
+// 					background-color: #f0f0f0;
+// 				}
+// 			}
+// 		}
+// 	}
+
+// 	/* Состояние "Открыто" */
+// 	&.is-active {
+// 		/* === ИСПРАВЛЕНИЕ 2: Показываем при наличии класса is-active === */
+// 		& > .filter-dropdown {
+// 			display: block !important;
+// 		}
+
+// 		/* Вращение стрелки */
+// 		.sort-btn svg {
+// 			transform: rotate(180deg);
+// 		}
+
+// 		/* Убираем скругление снизу у кнопки */
+// 		.sort-btn {
+// 			color: var(--black) !important;
+
+// 			/* Гарантируем, что кнопка остается серой */
+// 			background-color: #f4f4f4 !important;
+// 			border-bottom-left-radius: 0;
+// 			border-bottom-right-radius: 0;
+// 		}
+// 	}
+// }

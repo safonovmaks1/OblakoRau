@@ -1,0 +1,43 @@
+@use 'helpers' as *;
+
+.main-menu {
+	position: relative;
+	overflow: visible;
+
+	&__list {
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1.5rem;
+		height: 100%;
+	}
+
+	&__item {
+		position: relative;
+	}
+
+	&__link {
+		padding: 1rem 0;
+		font-size: var(--font-size-body);
+		font-weight: 600;
+		line-height: 2;
+		letter-spacing: 0.05rem;
+		white-space: nowrap;
+		text-transform: uppercase;
+
+		@include hover {
+			color: var(--gray-400);
+		}
+	}
+}
+
+.more {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.js-more-btn {
+	position: relative;
+}

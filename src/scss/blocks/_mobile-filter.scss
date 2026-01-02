@@ -1,0 +1,320 @@
+@use 'helpers' as *;
+
+.mobile-filter {
+	position: fixed;
+	z-index: 9999; /* Самый высокий z-index */
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	visibility: hidden;
+
+	/* По умолчанию скрыт */
+	opacity: 0;
+	transition:
+		opacity var(--transition-base),
+		visibility var(--transition-base);
+
+	/* Состояние "Открыт" */
+	&.is-open {
+		visibility: visible;
+		opacity: 1;
+
+		.mobile-filter__content {
+			transform: translateX(0); /* Выезжает на экран */
+		}
+	}
+
+	/* Оверлей (затемненный фон) */
+	&__overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: var(--overlay);
+		cursor: pointer;
+	}
+
+	/* Контент (боковая панель) */
+	&__content {
+		position: absolute;
+		top: 0;
+		left: 0; /* Выезжает справа, можно поменять на left: 0 */
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		max-width: var(--menu-width);
+		height: 100%;
+		background: #ffffff;
+		box-shadow: var(--shadow);
+		transition: transform var(--transition-base);
+		transform: translateX(-100%);
+	}
+
+	/* Шапка */
+	&__header {
+		flex-shrink: 0;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1rem;
+		border-bottom: var(--border);
+	}
+
+	&__title {
+		display: flex;
+		align-items: center;
+		gap: 0.6rem;
+		font-size: var(--font-size-body-lg);
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+
+	&__icon {
+		width: 1.2rem;
+		height: 1.2rem;
+		fill: var(--black);
+	}
+
+	&__close {
+		display: flex;
+		align-items: center;
+		padding: 5px;
+		color: var(--gray-400);
+		background: transparent;
+		border: none;
+		cursor: pointer;
+
+		svg {
+			width: 24px;
+			height: 24px;
+			fill: currentColor;
+		}
+	}
+
+	/* Тело (список фильтров) */
+	&__body {
+		flex-grow: 1;
+		overflow-y: auto;
+	}
+
+	/* Подвал (кнопка) */
+	&__footer {
+		flex-shrink: 0;
+	}
+}
+
+/* АДАПТАЦИЯ ВЕРСТКИ ФИЛЬТРОВ ДЛЯ МОБИЛЬНОГО ВИДА
+  (переопределяем стили, которые были для десктопа)
+*/
+.filter-dropdowns--mobile {
+	display: flex;
+	flex-direction: column; /* Фильтры идут друг под другом */
+	gap: 0; /* Убираем отступы между ними */
+
+	.filter-group {
+		width: 100%;
+		border-bottom: var(--border);
+
+		// &:last-child {
+		// 	border-bottom: none;
+		// }
+
+		.filter-btn {
+			justify-content: space-between;
+			width: 100%;
+			padding: 1rem;
+			font-size: var(--font-size-body);
+			background: transparent;
+			border: none;
+			border-radius: 0;
+
+			svg {
+				transition: transform 0.3s;
+			}
+		}
+
+		/* Поворот стрелки при открытии */
+		&.is-active .filter-btn svg {
+			transform: rotate(180deg);
+		}
+
+		/* Выпадающий список */
+		.filter-dropdown {
+			position: static;
+			display: none;
+			margin: 0;
+			padding: 0 1.25rem 1.25rem;
+			border-top: none;
+			box-shadow: none;
+			animation: none;
+
+			&__body {
+				padding: 1.25rem;
+				box-shadow: var(--shadow);
+			}
+		}
+
+		/* Показ содержимого при открытии */
+		&.is-active .filter-dropdown {
+			display: block;
+		}
+	}
+}
+
+/* Дополнительный стиль для элементов сортировки в списке */
+.filter-sort-item {
+	width: 100%;
+	padding: rem(10) 0;
+	font-size: rem(14);
+	text-align: left;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+
+	&:hover {
+		color: var(--accent);
+	}
+}
+
+// .sort-inner-wrapper {
+// 	position: relative;
+
+// 	& .filter-dropdown {
+// 		display: none;
+// 		width: 100%;
+// 		padding: 0 !important;
+
+// 		// position: static;
+// 		// padding: 0;
+// 		// background: #f4f4f4;
+// 		// border-top: 1px solid rgba(0, 0, 0, 0.05);
+// 		// border-radius: 0 0 4px 4px;
+// 		// box-shadow: none;
+
+// 		& .sort-list {
+// 			box-shadow: var(--shadow);
+
+// 			&__item {
+// 				width: 100%;
+// 			}
+// 		}
+// 	}
+
+// 	& .sort-btn {
+// 		display: flex;
+// 		justify-content: space-between;
+// 		align-items: center;
+// 		width: 100%;
+// 		padding: 1rem;
+// 		font-size: var(--font-size-body);
+// 		text-align: left;
+// 		color: var(--black);
+// 		background-color: #f4f4f4;
+// 		border: 1px solid transparent;
+// 		border-radius: var(--radius-sm);
+// 		cursor: pointer;
+// 	}
+
+// 	&.is-active {
+// 		& .filter-dropdown {
+// 			display: block;
+// 		}
+
+// 		& .sort-btn svg {
+// 			transform: rotate(180deg);
+// 		}
+
+// 		& .sort-btn {
+// 			border-bottom-left-radius: 0;
+// 			border-bottom-right-radius: 0;
+// 		}
+// 	}
+// }
+
+.sort-inner-wrapper {
+	position: relative;
+	margin-bottom: 0.5rem;
+
+	&.filter-group {
+		border-bottom: none;
+	}
+
+	& .sort-btn {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		padding: 1rem;
+		font-size: var(--font-size-body);
+		text-align: left;
+
+		/* Цвета по умолчанию */
+		color: var(--black);
+		background-color: var(--white-100);
+		border: var(--border);
+		border-radius: var(--radius-sm);
+		cursor: pointer;
+		transition: all 0.3s ease;
+
+		svg {
+			transition: transform 0.3s;
+			transform: rotate(0deg) !important;
+			fill: currentColor;
+		}
+	}
+
+	& > .filter-dropdown {
+		position: absolute;
+		z-index: 20;
+		top: 100%;
+		left: 0;
+		display: none !important;
+		width: 100%;
+		padding: 0 !important;
+		background-color: var(--white);
+		border: none;
+		border-radius: 0 0 4px 4px;
+
+		& .sort-list {
+			margin: 0;
+			padding: 0;
+			box-shadow: var(--shadow);
+			list-style: none;
+
+			&__item {
+				width: 100%;
+				padding: 10px 1rem;
+				cursor: pointer;
+				transition: background 0.2s;
+
+				&:hover {
+					background-color: #f4f4f4;
+				}
+
+				&.is-active {
+					font-weight: 700;
+				}
+			}
+		}
+	}
+
+	/* АКТИВНОЕ СОСТОЯНИЕ */
+	&.is-active {
+		& > .filter-dropdown {
+			display: block !important;
+		}
+
+		& .sort-btn svg {
+			transform: rotate(180deg) !important;
+		}
+
+		& > .sort-btn {
+			color: var(--black) !important;
+			background-color: #f4f4f4 !important;
+			border-bottom-left-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+	}
+}

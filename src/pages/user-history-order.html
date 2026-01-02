@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		@@include('../partials/_config/head.html', {"title": "Магазин брендовой одежды OBLACKO RAI"})
+	</head>
+	<body>
+		@@include('../partials/header.html')
+		<!-- header -->
+		<main>
+			<section class="section">
+				<div class="container">
+					<header class="section-header">
+						<h2 class="section-header__title section-header__title--big">История заказов</h2>
+					</header>
+					<!--  -->
+					<nav class="breadcrumbs" aria-label="Хлебные крошки">
+						<ul class="breadcrumbs__list">
+							<li class="breadcrumbs__item">
+								<a class="breadcrumbs__link" href="/">Главная</a>
+							</li>
+							<li class="breadcrumbs__item">
+								<a class="breadcrumbs__link" href="user.html">Личный кабинет</a>
+							</li>
+							<li class="breadcrumbs__item">
+								<span class="breadcrumbs__link" aria-current="page">История заказов</span>
+							</li>
+						</ul>
+					</nav>
+					<!--  -->
+					<div class="section__wrapper">
+						<aside class="d-none d-lg-block">
+							<nav class="left-menu" aria-label="Дополнительное меню">
+								<ul class="left-menu__list">
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="user.html">Личный кабинет</a>
+									</li>
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="user-current-order.html">Текущие заказы</a>
+									</li>
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="404.html">Личный счет</a>
+									</li>
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="user-profile.html">Профиль</a>
+									</li>
+									<li class="left-menu__item">
+										<a class="left-menu__link left-menu__link--active" href="user-history-order.html">История заказов</a>
+									</li>
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="404.html">Избранные товары</a>
+									</li>
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="404.html">Корзина</a>
+									</li>
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="user-subscribe.html">Подписки</a>
+									</li>
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="404.html">Контакты</a>
+									</li>
+								</ul>
+							</nav>
+						</aside>
+						<!--  -->
+						<div class="section__content">
+							<div class="account-section hidden">
+								<h3 class="account-section__heading">История заказов отсутствует</h3>
+							</div>
+
+							<div class="orders-group">
+								<h3 class="orders-group__title">Доставленные заказы</h3>
+								<hr class="orders-group__line" />
+							</div>
+
+							<div class="history-item">
+								<div class="history-item__header">
+									<div class="history-item__info">
+										<div class="history-item__title">
+											Заказ № 2801 <span class="history-item__date">от 07.07.2025 18:57:30</span>, 1 товар на сумму 25 000 ₽
+										</div>
+									</div>
+
+									<div class="history-item__status">Заказ доставлен 07.07.2025</div>
+								</div>
+
+								<div class="history-item__footer">
+									<a class="button" href="order-details.html">ПОДРОБНЕЕ О ЗАКАЗЕ</a>
+									<button class="button button--inverse" type="button">ПОВТОРИТЬ ЗАКАЗ</button>
+								</div>
+							</div>
+							<!--  -->
+							<div class="history-item">
+								<div class="history-item__header">
+									<div class="history-item__info">
+										<div class="history-item__title">
+											Заказ № 2800 <span class="history-item__date">от 07.07.2025 18:57:30</span>, 1 товар на сумму 25 000 ₽
+										</div>
+									</div>
+
+									<div class="history-item__status">Заказ доставлен 07.07.2025</div>
+								</div>
+
+								<div class="history-item__footer">
+									<a class="button" href="order-details.html">ПОДРОБНЕЕ О ЗАКАЗЕ</a>
+									<button class="button button--inverse" type="button">ПОВТОРИТЬ ЗАКАЗ</button>
+								</div>
+							</div>
+							<!--  -->
+
+							<div class="orders-group">
+								<h3 class="orders-group__title">Отмененные заказы</h3>
+								<hr class="orders-group__line" />
+							</div>
+
+							<div class="history-item">
+								<div class="history-item__header">
+									<div class="history-item__info">
+										<div class="history-item__title">
+											Заказ № 2802 <span class="history-item__date">от 07.07.2025 18:57:30</span>, 1 товар на сумму 25 000 ₽
+										</div>
+									</div>
+
+									<div class="history-item__status">Заказ отменен 07.07.2025</div>
+								</div>
+
+								<div class="history-item__footer">
+									<a class="button" href="order-details.html">ПОДРОБНЕЕ О ЗАКАЗЕ</a>
+									<button class="button button--inverse" type="button">ПОВТОРИТЬ ЗАКАЗ</button>
+								</div>
+							</div>
+							<!--  -->
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		@@include('../partials/footer.html')
+		<!-- footer -->
+		@@include('../partials/modals.html')
+		<!-- Modals -->
+		@@include('../partials/scroll-up.html')
+		<!-- Scroll - up -->
+	</body>
+</html>

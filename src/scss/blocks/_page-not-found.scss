@@ -1,0 +1,37 @@
+@use 'helpers' as *;
+
+.page-not-found {
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+	text-align: center;
+
+	&__image {
+		& svg {
+			fill: var(--gray-500);
+		}
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+	}
+
+	&__title {
+		font-size: var(--font-size-h1);
+
+	}
+
+	&__text {
+		font-size: var(--font-size-body-lg);
+		font-weight: 300;
+	}
+
+	&__buttons {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 2.5rem;
+	}
+}

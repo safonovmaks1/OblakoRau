@@ -1,0 +1,43 @@
+@use 'helpers' as *;
+
+.pagination {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 2.5rem; // Отступ сверху от каталога
+
+	&__list {
+		display: flex;
+		align-items: center;
+		gap: 0.625rem; // Уменьшил gap, 25px слишком широко для пагинации
+	}
+
+	&__link {
+		// ВАЖНО: flex, чтобы центрировать цифру внутри круга
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 2.5rem; // Чуть больше область клика (UX)
+		height: 2.5rem;
+		font-size: var(--font-size-body);
+		font-weight: 700;
+		text-decoration: none;
+		color: var(--black);
+		border-radius: 50%; // Круг
+		transition:
+			background-color 0.2s,
+			color 0.2s;
+
+		// Активное состояние (через класс или aria)
+		&--current,
+		&[aria-current='page'] {
+			color: var(--white);
+			background-color: var(--black);
+			pointer-events: none; // Нельзя кликнуть на текущую страницу
+		}
+
+		@include hover {
+			background-color: var(--gray-200); // Легкий фон при наведении
+		}
+	}
+}

@@ -1,0 +1,16 @@
+@use 'helpers' as *;
+
+.logo {
+	flex-shrink: 0;
+
+	@include respond(lg) {
+		flex-grow: 1;
+	}
+
+	& img {
+		@include respond(md) {
+			width: 105px;
+			height: 43px;
+		}
+	}
+}

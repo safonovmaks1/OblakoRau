@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		@@include('../partials/_config/head.html', {"title": "Магазин брендовой одежды OBLACKO RAI"})
+	</head>
+	<body>
+		@@include('../partials/header.html')
+		<!-- header -->
+		<main>
+			<section class="section">
+				<div class="container">
+					<header class="section-header flex-center">
+						<h2 class="section-header__title section-header__title--big">Регистрация</h2>
+					</header>
+					<!--  -->
+					<nav class="breadcrumbs" aria-label="Хлебные крошки">
+						<ul class="breadcrumbs__list flex-center">
+							<li class="breadcrumbs__item">
+								<a class="breadcrumbs__link" href="/">Главная</a>
+							</li>
+							<li class="breadcrumbs__item">
+								<a class="breadcrumbs__link" href="auth.html">Авторизация</a>
+							</li>
+							<li class="breadcrumbs__item">
+								<span class="breadcrumbs__link" aria-current="page">Регистрация</span>
+							</li>
+						</ul>
+					</nav>
+					<!--  -->
+					<div class="section__wrapper">
+						<div class="section__content">
+							<div class="text-content text-center">
+								<p>
+									Зарегистрируйтесь, чтобы использовать все возможности личного кабинета: отслеживание заказов, настройку подписки, связи с социальными сетями и
+									другие.
+								</p>
+								<p>Мы никогда и ни при каких условиях не разглашаем личные данные клиентов.</p>
+								<p>Контактная информация будет использована только для оформления заказов и более удобной работы с сайтом.</p>
+							</div>
+
+							<form class="form" id="registration-form">
+								<div class="form__body">
+									<div class="form__item">
+										<div class="form__field">
+											<div class="form__error"><span>введите фамилия имя отчество</span></div>
+											<input name="name" type="text" class="form__input _req" placeholder="Фамилия Имя Отчество" />
+										</div>
+									</div>
+									<!--  -->
+									<div class="form__item">
+										<div class="form__field">
+											<div class="form__error"><span>введите e-mail</span></div>
+											<input name="email" type="text" class="form__input _req" placeholder="E-mail" />
+										</div>
+									</div>
+									<!--  -->
+									<div class="form__item">
+										<div class="form__field">
+											<div class="form__error">
+												<span>введите телефон</span>
+											</div>
+											<input name="phone" type="tel" class="form__input _req" placeholder="+7 (___) ____-__-__" />
+										</div>
+									</div>
+									<!-- /.form__item -->
+									<div class="form__item">
+										<div class="form__field">
+											<div class="form__error">
+												<span>введите пароль</span>
+											</div>
+											<input name="password" type="password" id="password" class="form__input _req" placeholder="Пароль" />
+											<svg class="icon form__icon form__icon-abs">
+												<use xlink:href="images/sprite.symbol.svg#eye-off"></use>
+											</svg>
+										</div>
+									</div>
+									<!-- /.form__item -->
+									<div class="form__item">
+										<div class="form__field">
+											<div class="form__error">
+												<span>введите подтверждение пароля</span>
+											</div>
+											<input name="confirm_password" type="password" id="passwor" class="form__input _req" placeholder="Подтверждение пароля" />
+											<svg class="icon form__icon form__icon-abs">
+												<use xlink:href="images/sprite.symbol.svg#eye-off"></use>
+											</svg>
+										</div>
+									</div>
+									<!-- /.form__item -->
+
+									<div class="form__item">
+										<div class="form__field">
+											<div class="form__error">
+												<span>согласитесь с уловиями</span>
+											</div>
+											<div class="checkbox switch-container">
+												<input id="reg-agreement" type="checkbox" name="agreement" class="switch-input" />
+												<label for="reg-agreement" class="switch-label">
+													<span class="switch-slider"></span>
+													<span class="switch-text"> Я согласен на <a target="_blank" href="politics.html">обработку персональных данных</a>*</span>
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="flex-sb">
+										<button type="submit" class="button">ЗАРЕГИСТРИРОВАТЬСЯ</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		@@include('../partials/footer.html')
+		<!-- footer -->
+		@@include('../partials/modals.html')
+		<!-- Modals -->
+		@@include('../partials/scroll-up.html')
+		<!-- Scroll - up -->
+	</body>
+</html>

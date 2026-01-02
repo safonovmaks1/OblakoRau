@@ -1,0 +1,351 @@
+@use 'helpers' as *;
+
+/* Базовый стиль точки */
+
+.slider-reviews {
+	position: relative;
+	overflow: hidden;
+	margin-top: 2rem;
+
+	&--mini {
+		width: min(100%, 1360px);
+	}
+
+	&__nav {
+		display: flex;
+		justify-content: end;
+		gap: 1rem;
+		margin-bottom: 2rem;
+	}
+
+	.slider-reviews__prev,
+	.slider-reviews__next {
+		position: static;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 2.5rem;
+		height: 2.5rem;
+		color: var(--black);
+		background-color: var(--white);
+		border-radius: 50%;
+		cursor: pointer;
+
+		& svg {
+			fill: currentColor;
+		}
+
+		@include hover {
+			color: var(--white);
+			background-color: var(--black);
+
+			& svg {
+				fill: var(--white);
+			}
+		}
+
+		&--gray {
+			color: var(--black);
+			background-color: var(--gray-500);
+
+			@include hover {
+				color: var(--white);
+				background-color: var(--gray-500);
+			}
+		}
+	}
+
+	&__icon {
+		width: 1.5rem;
+		height: 1.5rem;
+	}
+
+	&__slide {
+		overflow: hidden;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 1rem;
+		background: #ffffff;
+		border: var(--border);
+		border-radius: var(--radius-xl);
+		cursor: pointer;
+
+		@include respond(xl) {
+			padding: 5rem 1rem;
+		}
+
+		&--mini {
+			padding: 5rem 1rem;
+		}
+	}
+
+	&__img {
+		width: 100%;
+		height: auto;
+		object-fit: cover;
+	}
+}
+
+.slider-viewed {
+	position: relative;
+
+	&__wrapper {
+		padding: 1.25rem 0;
+	}
+
+	&__slide {
+		display: flex !important;
+		gap: 1.5rem;
+		padding: 1.5rem;
+		background-color: var(--white);
+		border: var(--border);
+		border-radius: var(--radius-xl);
+		transition: box-shadow 0.2s ease;
+
+		@include hover {
+			box-shadow: var(--shadow);
+		}
+	}
+
+	&__images {
+		width: 5rem;
+		height: 5rem;
+	}
+
+	&__block {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	&__title {
+		font-size: var(--font-size-body-lg);
+		font-weight: 400;
+		color: var(--black);
+		text-wrap: wrap;
+	}
+
+	&__price {
+		margin-bottom: 0.5rem;
+		font-size: var(--font-size-h3);
+		font-weight: 700;
+		color: var(--black);
+	}
+
+	&__nav {
+		position: absolute;
+		z-index: 2;
+		top: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 1.9rem;
+		height: 1.9rem;
+		background-color: var(--white);
+		border-radius: 50%;
+		box-shadow: var(--shadow);
+		cursor: pointer;
+		transform: translateY(-50%);
+	}
+
+	&__prev,
+	&__next {
+		fill: var(--black);
+
+		& svg {
+			width: 1.3rem;
+			fill: currentColor;
+		}
+
+		@include respond(sm) {
+			display: none;
+		}
+	}
+
+	&__prev {
+		left: -0.9rem;
+	}
+
+	&__next {
+		right: -0.9rem;
+	}
+}
+
+.product-slider {
+	position: relative;
+	max-width: 500px;
+	margin: 0 auto;
+
+	&__main {
+		position: relative;
+		margin: 2rem 0;
+	}
+
+	img {
+		display: block;
+		width: 100%;
+		height: auto;
+		object-fit: cover;
+		border-radius: var(--radius-sm);
+	}
+
+	&__btn {
+		position: absolute;
+		z-index: 10;
+		top: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: none;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		transform: translateY(-50%);
+
+		&.swiper-button-disabled {
+			opacity: 0.5;
+			pointer-events: none;
+		}
+	}
+
+	/* === ВАРИАНТ 1: Стрелки по бокам (Серые, вне картинки) === */
+	&--arrows-side {
+		.product-slider__main {
+			padding: 0 50px;
+		}
+
+		.product-slider__btn {
+			width: 40px;
+			height: 40px;
+			color: #333333;
+			background: transparent;
+
+			&--prev {
+				left: 0;
+			}
+
+			&--next {
+				right: 0;
+			}
+
+			&:hover {
+				color: #000000;
+				transform: translateY(-50%) scale(1.1);
+			}
+
+			svg {
+				width: 24px;
+				height: 24px;
+				fill: currentColor;
+			}
+		}
+	}
+
+	/* === ВАРИАНТ 2: Стрелки поверх (Белые круги) === */
+	&--arrows-overlay {
+		.product-slider__btn {
+			width: 32px;
+			height: 32px;
+			color: #333333;
+			background: #ffffff;
+			border-radius: 50%;
+			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+			&--prev {
+				left: 10px;
+			}
+
+			&--next {
+				right: 10px;
+			}
+
+			&:hover {
+				background: #f0f0f0;
+			}
+
+			& svg {
+				width: 1.2rem;
+				height: 1.2rem;
+				fill: currentColor;
+			}
+		}
+	}
+
+	/* === МИНИАТЮРЫ === */
+	&__thumbs {
+		box-sizing: content-box;
+		height: 60px;
+		margin-top: 10px;
+	}
+
+	&__thumb-slide {
+		overflow: hidden;
+		width: 60px !important; /* !important нужен, чтобы перебить инлайн-стили Swiper */
+		height: 60px !important;
+		border: 1px solid transparent;
+		border-radius: var(--radius-sm);
+		opacity: 0.6;
+		cursor: pointer;
+		transition: opacity 0.2s;
+
+		/* Активная миниатюра */
+		&.swiper-slide-thumb-active {
+			border-color: var(--black);
+			opacity: 1;
+		}
+
+		&:hover {
+			opacity: 1;
+		}
+
+		/* Картинка внутри миниатюры */
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	.swiper-pagination-bullet {
+		width: 1.2rem;
+		height: 3px;
+		margin: 0 0.5rem !important;
+		background-color: var(--gray-500);
+		border-radius: var(--radius-sm);
+		opacity: 1;
+		cursor: pointer;
+		transition:
+			width 0.3s ease,
+			background-color 0.3s ease;
+
+		&:hover {
+			background-color: var(--gray-500);
+		}
+	}
+
+	.swiper-pagination-bullet-active {
+		background-color: var(--black) !important;
+	}
+}
+
+.swiper-pagination {
+	position: relative !important;
+	display: none;
+	margin: 1rem auto 0 !important;
+	font-size: 1rem;
+
+	@include respond(sm) {
+		display: block;
+	}
+}
+
+.photo-modal-pagination {
+	position: static !important; /* Отменяем абсолютное позиционирование Swiper */
+	display: block !important; /* Показываем всегда (у вас стояло display: none) */
+	width: auto !important; /* Чтобы не занимала всю ширину */
+	margin: 0 !important; /* Убираем лишние отступы */
+	font-size: 1.125rem;
+	font-weight: 300;
+	color: var(--black);
+}

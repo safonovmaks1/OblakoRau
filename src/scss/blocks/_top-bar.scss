@@ -1,0 +1,22 @@
+@use 'helpers' as *;
+
+.top-bar {
+	padding: 1rem 0;
+	border-bottom: var(--border);
+}
+
+.top-menu {
+	&__list {
+		display: flex;
+		align-items: center;
+		gap: 1.875rem;
+	}
+
+	&__link {
+		color: var(--gray-600);
+
+		@include hover {
+			color: var(--black);
+		}
+	}
+}

@@ -1,0 +1,26 @@
+@use 'helpers' as *;
+
+.reviews {
+	&__header {
+		display: flex;
+		align-items: center;
+		gap: 50px;
+
+		@include respond(xs) {
+			gap: 1rem;
+		}
+
+		&-button {
+			flex-shrink: 0;
+			border-radius: var(--radius-sm);
+
+			@include respond(xs) {
+				padding: 0.9rem;
+			}
+		}
+
+		&-line {
+			width: 100%;
+		}
+	}
+}

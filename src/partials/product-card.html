@@ -1,0 +1,59 @@
+<article class="product-card">
+	<div class="product-images">
+		<img src="@@images" alt="Сумка Louis Vuitton" width="245" height="283" loading="lazy" />
+
+		<ul class="product-links">
+			<li class="product-links__item @@active">
+				<a class="product-links__link" href="#">
+					<svg class="icon">
+						<use xlink:href="images/sprite.symbol.svg#heart"></use>
+					</svg>
+				</a>
+			</li>
+
+			<li class="product-links__item">
+				<a class="product-links__link" data-modal-open="#buy">
+					<svg class="icon">
+						<use xlink:href="images/sprite.symbol.svg#shopping-bag"></use>
+					</svg>
+				</a>
+			</li>
+			<li class="product-links__item">
+				<a class="product-links__link" href="#">
+					<svg class="icon">
+						<use xlink:href="images/sprite.symbol.svg#eye"></use>
+					</svg>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<!--  -->
+	<div class="product-info">
+		<h2 class="product-name">@@title</h2>
+		<p class="product-article">Арт.: 77925</p>
+		<p class="product-price">34 000 ₽</p>
+	</div>
+	<!--  -->
+
+	<div class="product-actions">
+		<div class="product-wrapper d-none d-md-flex">
+			<div class="counter">
+				<button class="counter__item counter__minus">-</button>
+				<span class="counter__item counter__number">0</span>
+				<button class="counter__item counter__plus">+</button>
+			</div>
+			<button class="button add-to-cart " type="button">В корзину</button>
+		</div>
+
+		<div class="size-options d-none d-md-block">
+			<div class="">Размер одежды<span> - S (42)</span></div>
+			<div class="size-options__wrapper">
+				<button class="button button--inverse size-button">S (42)</button>
+				<button class="button button--inverse size-button">M (44)</button>
+				<button class="button button--inverse size-button">L (46)</button>
+			</div>
+		</div>
+
+		<a class="button product-actions__button d-md-none" href="#">подробнее</a>
+	</div>
+</article>

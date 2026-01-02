@@ -1,0 +1,49 @@
+@use 'helpers' as *;
+
+.brands-main {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+	place-items: center center;
+	gap: 3rem;
+
+	@include respond(md) {
+		grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+	}
+
+	@include respond(xs) {
+		grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+		gap: 1.5rem;
+	}
+
+
+	&__item {
+		position: relative;
+
+		&__image {
+			width: 80%;
+			height: 80%;
+			object-fit: contain;
+			filter: grayscale(100%);
+			transition:
+				filter 0.2s ease,
+				opacity 0.2s ease;
+		}
+
+		a::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: var(--white);
+			opacity: 0.5;
+			transition: opacity 0.2s ease;
+			pointer-events: none;
+		}
+
+		&:hover a::after {
+			opacity: 0;
+		}
+	}
+}

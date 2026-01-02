@@ -1,0 +1,22 @@
+@use 'helpers' as *;
+
+.main-bar {
+	padding: 1rem 0;
+
+	&-inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 3.5rem;
+
+		@include respond(lg) {
+			gap: 1rem;
+		}
+
+		@include respond(md) {
+			gap: 0.5rem;
+		}
+	}
+}
+
+

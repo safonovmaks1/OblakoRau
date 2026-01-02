@@ -1,0 +1,17 @@
+@use 'helpers' as *;
+
+.payment-icons {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+
+	&__img {
+		filter: grayscale(100%);
+		cursor: pointer;
+
+		@include hover {
+			filter: grayscale(0%);
+		}
+	}
+}

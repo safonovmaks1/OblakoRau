@@ -1,0 +1,442 @@
+<!-- <button class="button" data-modal-open="#buy">test modal</button> -->
+
+<div class="modal" id="feedback" data-modal>
+	<div class="modal__overlay" data-modal-overlay></div>
+
+	<div class="modal__dialog">
+		<div class="modal__header">
+			<button class="modal__close" type="button" aria-label="Закрыть" data-modal-close>
+				<svg class="icon"><use xlink:href="images/sprite.symbol.svg#close"></use></svg>
+			</button>
+		</div>
+
+		<p class="modal__thanks">Спасибо! Ваш отзыв отправлен.</p>
+
+		<div class="modal__content">
+			<h2 class="modal__title">Оставить отзыв</h2>
+			<form class="form" id="feedback-form" novalidate>
+				<div class="form__body">
+					<div class="form__item">
+						<div class="form__field">
+							<div class="form__error"><span>Введите имя</span></div>
+							<input name="name" type="text" class="form__input _req" placeholder="Ваше имя" />
+						</div>
+					</div>
+
+					<div class="form__item">
+						<div class="form__field">
+							<div class="form__error"><span>Введите корректный e-mail</span></div>
+							<input name="email" type="email" class="form__input _req" placeholder="E-mail" />
+						</div>
+					</div>
+
+					<div class="form__item">
+						<div class="form__field">
+							<div class="form__label">Изображение рядом с отзывом (ваше фото или логотип компании)</div>
+							<label class="file-upload">
+								<input type="file" name="attachment" class="file-upload__input" />
+								<span
+									><svg class="icon">
+										<use xlink:href="images/sprite.symbol.svg#attachment"></use></svg
+								></span>
+								<span>Прикрепите файл</span>
+							</label>
+						</div>
+					</div>
+
+					<div class="form__item">
+						<div class="form__field">
+							<div class="form__label">Ваша оценка</div>
+							<div class="rating">
+								<svg class="icon rating__icon" width="24" height="24"><use xlink:href="images/sprite.symbol.svg#star"></use></svg>
+								<svg class="icon rating__icon" width="24" height="24"><use xlink:href="images/sprite.symbol.svg#star"></use></svg>
+								<svg class="icon rating__icon" width="24" height="24"><use xlink:href="images/sprite.symbol.svg#star"></use></svg>
+								<svg class="icon rating__icon" width="24" height="24"><use xlink:href="images/sprite.symbol.svg#star"></use></svg>
+								<svg class="icon rating__icon" width="24" height="24"><use xlink:href="images/sprite.symbol.svg#star"></use></svg>
+
+								<div class="rating__text">Без оценки</div>
+								<input type="hidden" name="rating" value="0" />
+							</div>
+						</div>
+					</div>
+
+					<div class="form__item">
+						<div class="form__field">
+							<div class="form__error"><span>Введите текст отзыва</span></div>
+							<textarea name="message" class="form__input form__input_textarea _req" placeholder="Текст отзыва"></textarea>
+						</div>
+					</div>
+
+					<div class="form__item">
+						<div class="form__field">
+							<div class="form__error"><span>Согласитесь с условиями</span></div>
+							<div class="checkbox switch-container">
+								<input id="feedback-agreement" type="checkbox" name="agreement" class="switch-input" />
+								<label for="feedback-agreement" class="switch-label">
+									<span class="switch-slider"></span>
+									<span class="switch-text"> Я согласен на <a target="_blank" href="politics.html">обработку персональных данных</a>* </span>
+								</label>
+							</div>
+						</div>
+					</div>
+
+					<div>
+						<button type="submit" class="button">Отправить</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<div class="modal" id="question" data-modal>
+	<div class="modal__overlay" data-modal-overlay></div>
+
+	<div class="modal__dialog">
+		<div class="modal__header">
+			<button class="modal__close" type="button" aria-label="Закрыть" data-modal-close>
+				<svg class="icon"><use xlink:href="images/sprite.symbol.svg#close"></use></svg>
+			</button>
+		</div>
+
+		<p class="modal__thanks">Благодарим вас. <span>Ваш вопрос отправлен!</span></p>
+
+		<div class="modal__content">
+			<h2 class="modal__title">Задать вопрос</h2>
+			<form class="form" id="faq-form" novalidate>
+				<div class="form__body">
+					<div class="form__item">
+						<div class="form__field">
+							<div class="form__error"><span>Введите имя</span></div>
+							<input name="name" type="text" class="form__input _req" placeholder="Ваше имя" />
+						</div>
+					</div>
+
+					<div class="form__item">
+						<div class="form__field">
+							<div class="form__error">
+								<span>введите телефон</span>
+							</div>
+							<input name="phone" type="tel" class="form__input _req" placeholder="Телефон" />
+						</div>
+					</div>
+
+					<div class="form__item">
+						<div class="form__field">
+							<div class="form__error">
+								<span>введите e-mail</span>
+							</div>
+							<input name="email" type="text" class="form__input _req" placeholder="E-mail" />
+						</div>
+					</div>
+
+					<div class="form__item">
+						<div class="form__field">
+							<div class="form__error">
+								<span>введите текст</span>
+							</div>
+							<textarea name="message" class="form__input form__input_textarea _req" placeholder="Вопрос"></textarea>
+						</div>
+					</div>
+
+					<div class="form__item">
+						<div class="form__field">
+							<div class="form__error"><span>Согласитесь с условиями</span></div>
+							<div class="checkbox switch-container">
+								<input id="faq-agreement" type="checkbox" name="agreement" class="switch-input" />
+								<label for="faq-agreement" class="switch-label">
+									<span class="switch-slider"></span>
+									<span class="switch-text"> Я согласен на <a target="_blank" href="politics.html">обработку персональных данных</a>* </span>
+								</label>
+							</div>
+						</div>
+					</div>
+
+					<div>
+						<button type="submit" class="button">Отправить</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<div class="modal" id="buy" data-modal>
+	<div class="modal__overlay" data-modal-overlay></div>
+
+	<div class="modal__dialog">
+		<div class="modal__header">
+			<button class="modal__close" type="button" aria-label="Закрыть" data-modal-close>
+				<svg class="icon"><use xlink:href="images/sprite.symbol.svg#close"></use></svg>
+			</button>
+		</div>
+
+		<p class="modal__thanks">Благодарим вас за заказ!</p>
+
+		<div class="modal__content">
+			<h2 class="modal__title">Купить в 1 клик!</h2>
+			<!--  -->
+			<form class="form" id="faq-form">
+				<div class="form__body">
+					<div class="form__item">
+						<div class="form__field">
+							<div class="form__error"><span>Введите имя</span></div>
+							<input name="name" type="text" class="form__input _req" placeholder="Ваше имя" />
+						</div>
+					</div>
+
+					<div class="form__item">
+						<div class="form__field">
+							<div class="form__error">
+								<span>введите телефон</span>
+							</div>
+							<input name="phone" type="tel" class="form__input _req" placeholder="Телефон" />
+						</div>
+					</div>
+
+					<div class="form__item">
+						<div class="form__field">
+							<div class="form__error">
+								<span>введите e-mail</span>
+							</div>
+							<input name="email" type="text" class="form__input _req" placeholder="E-mail" />
+						</div>
+					</div>
+
+					<div class="form__item">
+						<div class="form__field">
+							<div class="form__error">
+								<span>введите текст</span>
+							</div>
+							<textarea name="message" class="form__input form__input_textarea" placeholder="Комментарий к заказу"></textarea>
+						</div>
+					</div>
+
+					<div class="form__item">
+						<div class="accordion border">
+							<div class="accordion__item">
+								<button type="button" class="accordion__header w-100">
+									<span class="accordion__title">Стоимость доставки</span>
+									<span class="accordion__icon">
+										<svg><use xlink:href="images/sprite.symbol.svg#arrow-down-s"></use></svg>
+									</span>
+								</button>
+								<div class="accordion__content">
+									<div class="accordion__body">
+										<p>В стоимость заказа может быть включена <a href="delivery.html">цена доставки</a></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="form__item">
+						<div class="form__field">
+							<div class="form__error"><span>Согласитесь с условиями</span></div>
+							<div class="checkbox switch-container">
+								<input id="buy-agreement" type="checkbox" name="agreement" class="switch-input" />
+								<label for="buy-agreement" class="switch-label">
+									<span class="switch-slider"></span>
+									<span class="switch-text"> Я согласен на <a target="_blank" href="politics.html">обработку персональных данных</a>* </span>
+								</label>
+							</div>
+						</div>
+					</div>
+
+					<div>
+						<button type="submit" class="button">Отправить</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<div class="modal checkout-card-modal" id="checkout-card" data-modal>
+	<div class="modal__overlay" data-modal-overlay></div>
+
+	<div class="modal__dialog">
+		<div class="modal__header">
+			<button class="modal__close" type="button" aria-label="Закрыть" data-modal-close>
+				<svg class="icon"><use xlink:href="images/sprite.symbol.svg#close"></use></svg>
+			</button>
+		</div>
+
+		<div class="modal__content">
+			<div class="checkout-card-modal__body">
+				<div class="checkout-card-modal__header">
+					<div class="checkout-card-modal__title">МУЖСКАЯ КУРТКА LORO PIANA</div>
+					<div class="checkout-card-modal__info">
+						<button type="button" class="button button--inverse checkout-card-modal__button">
+							<svg class="icon">
+								<use xlink:href="images/sprite.symbol.svg#heart"></use>
+							</svg>
+							<span>в изрбанное</span>
+						</button>
+
+						<div class="checkout-card-modal__art">Артикул: <span>78146</span></div>
+					</div>
+				</div>
+
+				<div class="checkout-card-modal__content">
+					<div class="checkout-card-modal__content-left">
+						<div class="product-slider product-slider--arrows-overlay js-slider-root" data-slider-type="product">
+							<div class="product-slider__main">
+								<button type="button" class="product-slider__btn product-slider__btn--prev js-slider-prev">
+									<svg class="icon"><use xlink:href="images/sprite.symbol.svg#arrow-left-s"></use></svg>
+								</button>
+								<button type="button" class="product-slider__btn product-slider__btn--next js-slider-next">
+									<svg class="icon"><use xlink:href="images/sprite.symbol.svg#arrow-right-s"></use></svg>
+								</button>
+								<div class="swiper js-swiper-container">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide"><img src="images/loro.png" alt="" /></div>
+										<div class="swiper-slide"><img src="images/loro.png" alt="" /></div>
+										<div class="swiper-slide"><img src="images/loro.png" alt="" /></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="checkout-card-modal__content-right">
+						<div class="cart-price">
+							<p class="cart-number">24 000 ₽</p>
+						</div>
+						<!--  -->
+						<div class="cart-options">
+							<div class="size-options">
+								<div class="size-options__title">Размер одежды<span> - S (42)</span></div>
+								<div class="size-options__wrapper">
+									<button class="button button--inverse size-button">L (46)</button>
+									<button class="button button--inverse size-button">XL (48-50)</button>
+									<button class="button button--inverse size-button">2 XL (52)</button>
+									<button class="button button--inverse size-button">3 XL (54)</button>
+									<button class="button button--inverse size-button">4 XL (56)</button>
+								</div>
+							</div>
+						</div>
+						<!--  -->
+						<div class="cart-counter">
+							<div class="product-wrapper">
+								<div class="counter">
+									<button class="counter__item counter__minus">-</button>
+									<span class="counter__item counter__number">0</span>
+									<button class="counter__item counter__plus">+</button>
+								</div>
+								<button class="button add-to-cart" type="button">В корзину</button>
+							</div>
+							<!--  -->
+							<button type="button" class="button button--w100" data-modal-open="#buy">купить в 1 клик</button>
+						</div>
+						<!--  -->
+						<div class="cart-info">
+							<ul class="cart-info__list">
+								<li class="cart-info__item">
+									<a class="cart-info__link" href="#">
+										<svg class="icon">
+											<use xlink:href="images/sprite.symbol.svg#truck"></use>
+										</svg>
+										Рассчитать доставку</a
+									>
+								</li>
+								<li class="cart-info__item">
+									<a class="cart-info__link" href="#">
+										<svg class="icon">
+											<use xlink:href="images/sprite.symbol.svg#gift"></use>
+										</svg>
+										Хочу в подарок</a
+									>
+								</li>
+								<li class="cart-info__item">
+									<span class="cart-info__link not-active">
+										<svg class="icon">
+											<use xlink:href="images/sprite.symbol.svg#information"></use>
+										</svg>
+										Доставка завтра — от 800 ₽</span
+									>
+								</li>
+							</ul>
+						</div>
+						<!--  -->
+
+						<div class="checkout-card-modal__characteristic">
+							<div class="checkout-card-modal__characteristic-title">Характеристики</div>
+
+							<div class="cart-characteristics">
+								<div class="cart-characteristics__item">
+									<span class="cart-characteristics__label">Цвет</span>
+									<span class="cart-characteristics__value">Синий</span>
+								</div>
+
+								<div class="cart-characteristics__item">
+									<span class="cart-characteristics__label">Вид одежды</span>
+									<span class="cart-characteristics__value">Куртка</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="checkout-card-modal__footer">
+					<a href="#" class="button button--w100">больше информации о товаре</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal" id="cart-slider" data-modal>
+	<div class="modal__overlay" data-modal-overlay></div>
+
+	<div class="modal__dialog js-slider-root" data-slider-type="product-popup">
+		<div class="modal__header">
+			<div class="swiper-pagination photo-modal-pagination"></div>
+
+			<button class="modal__close" type="button" aria-label="Закрыть" data-modal-close>
+				<svg class="icon"><use xlink:href="images/sprite.symbol.svg#close"></use></svg>
+			</button>
+		</div>
+
+		<div class="modal__content">
+			<!-- -->
+			<div class="product-slider js-slider-root product-slider--arrows-side" data-slider-type="product-popup">
+				<div class="product-slider__main">
+					<button type="button" class="product-slider__btn product-slider__btn--prev js-slider-prev">
+						<svg class="icon"><use xlink:href="images/sprite.symbol.svg#arrow-left-s"></use></svg>
+					</button>
+					<button type="button" class="product-slider__btn product-slider__btn--next js-slider-next">
+						<svg class="icon"><use xlink:href="images/sprite.symbol.svg#arrow-right-s"></use></svg>
+					</button>
+
+					<div class="swiper js-swiper-container">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide" data-modal-open="#cart-slider">
+								<img src="images/big-1.jpg" alt="" />
+							</div>
+							<div class="swiper-slide" data-modal-open="#cart-slider">
+								<img src="images/big-1.jpg" alt="" />
+							</div>
+							<div class="swiper-slide" data-modal-open="#cart-slider">
+								<img src="images/big-1.jpg" alt="" />
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="product-slider__thumbs product-slider__thumbs--popup swiper js-swiper-thumbs">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide product-slider__thumb-slide">
+							<img src="images/small-1.jpg" alt="" />
+						</div>
+						<div class="swiper-slide product-slider__thumb-slide">
+							<img src="images/small-1.jpg" alt="" />
+						</div>
+						<div class="swiper-slide product-slider__thumb-slide">
+							<img src="images/small-1.jpg" alt="" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

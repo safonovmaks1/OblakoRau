@@ -1,0 +1,122 @@
+@use 'helpers' as *;
+
+#map {
+	width: 100%;
+	height: 100%;
+	min-height: 640px;
+	background-color: #f0f0f0;
+}
+
+.map-marker {
+	cursor: pointer;
+	transform: translate(-50%, -100%);
+}
+
+.ymap-container {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	min-height: 43.75rem;
+}
+
+/* Стили для кнопок зума остаются те же, что я давал раньше */
+.map-zoom {
+	position: absolute;
+	z-index: 9;
+	top: 30px;
+	right: 30px;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	background: #ffffff;
+	border-radius: var(--radius-xl);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.map-btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 3.125rem;
+	height: 2.5rem;
+	font-size: var(--font-size-h2);
+	font-weight: 400;
+	color: var(--black);
+	background: var(--white);
+	border: none;
+	cursor: pointer;
+	transition: background 0.2s;
+
+	&:hover {
+		background-color: var(--white-100);
+	}
+}
+
+.map-separator {
+	height: 1.5rem;
+	border: var(--border);
+}
+
+// Выпадающий список (Слои)
+.map-layer {
+	position: absolute;
+	z-index: 9;
+	top: 5.625rem; // Отступ от зума
+	right: 1.875rem;
+
+	&__toggle {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 0.625rem;
+		width: 8rem;
+		height: 2.5rem;
+		padding: 0 1rem;
+		font-size: var(--font-size-body);
+		background: var(--white);
+		border: none;
+		border-radius: var(--radius-xl);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+		cursor: pointer;
+	}
+
+	&__list {
+		position: absolute;
+		top: 100%;
+		right: 0;
+		overflow: hidden;
+		display: none; // Скрыто по умолчанию
+		width: 100%;
+		margin-top: 0.5rem;
+		padding: 0;
+		background: var(--white);
+		border-radius: var(--radius);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+		list-style: none;
+	}
+
+	// Состояние открытого меню
+	&.is-open .map-layer__list {
+		display: block;
+	}
+
+	&__item {
+		padding: 0.625rem 1rem;
+		font-size: var(--font-size-body);
+		cursor: pointer;
+		transition: background 0.2s;
+
+		&:hover {
+			background-color: var(--white-100);
+		}
+	}
+}
+
+// ЗАПРЕЩЕНО ПРАВИЛАМИ ЯНДЕКСА (Могут забанить домен)
+// Лучше не скрывать, а аккуратно подвинуть или сделать меньше
+
+.ymaps-2-1-79-map-copyrights-promo,
+.ymaps-2-1-79-copyrights-pane {
+	@include visually-hidden;
+}

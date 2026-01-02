@@ -1,0 +1,91 @@
+@use 'helpers' as *;
+
+.container {
+	--container-padding-x: 1rem;
+
+	width: min(var(--container-width), 100% - (var(--container-padding-x) * 2));
+	margin: 0 auto;
+}
+
+.section {
+	width: 100%;
+	padding: 4.5rem 0;
+
+	@include respond(xs) {
+		padding: 2rem 0;
+	}
+
+	&__wrapper {
+		display: flex;
+		gap: 2rem;
+
+		@include respond(sm) {
+			flex-direction: column;
+		}
+	}
+
+	&__content {
+		width: 100%;
+		min-width: 0;
+	}
+}
+
+.section-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 2rem;
+	margin-bottom: 3rem;
+
+	&__title {
+		display: flex;
+		align-items: center;
+		gap: 0.8rem;
+		margin-bottom: 0;
+		font-size: var(--font-size-h2);
+		font-weight: 700;
+		color: var(--black);
+
+		&--big {
+			font-size: var(--font-size-h1);
+		}
+	}
+
+	&__actions {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+
+		@include respond(md) {
+			justify-content: end;
+
+			&--mt {
+				margin-top: 1rem;
+			}
+		}
+	}
+
+	&__link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.3rem;
+		font-size: var(--font-size-small);
+		font-weight: 500;
+		letter-spacing: 0.1em;
+		text-decoration: none;
+		text-transform: uppercase;
+		color: var(--gray-400);
+
+		& svg {
+			width: 1rem;
+		}
+
+		@include hover {
+			color: var(--black);
+
+			svg {
+				fill: var(--black);
+			}
+		}
+	}
+}

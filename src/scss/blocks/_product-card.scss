@@ -1,0 +1,240 @@
+@use 'helpers' as *;
+
+.product-card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 440px;
+	height: 100%;
+	padding: 1rem;
+	background-color: var(--white);
+	border: var(--border);
+	border-radius: var(--radius-xl);
+	transition:
+		box-shadow 0.2s ease,
+		border-color 0.2s ease;
+
+	@include respond(xl) {
+		padding: 1rem;
+	}
+
+	@include respond(xs) {
+		padding: 0.85rem;
+	}
+
+	&:hover {
+		z-index: 10;
+		background: var(--white);
+		box-shadow: var(--shadow);
+	}
+}
+
+/* === ИЗОБРАЖЕНИЕ === */
+.product-images {
+	position: relative;
+	z-index: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	aspect-ratio: 1 / 1;
+	width: 100%;
+	margin-bottom: 1rem;
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+}
+
+/* === КНОПКИ ПОВЕРХ КАРТИНКИ === */
+.product-links {
+	position: absolute;
+	z-index: 5;
+	top: 0;
+	right: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+
+	@include respond(sm) {
+		inset: auto auto 0 0;
+		flex-direction: row;
+	}
+
+	&__item {
+		display: none;
+		justify-content: center;
+		align-items: center;
+		width: 2rem;
+		height: 2rem;
+		color: var(--gray-500);
+		background-color: var(--white);
+		border-radius: var(--radius-sm);
+		box-shadow: var(--shadow);
+		visibility: hidden;
+		opacity: 0;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		transform: translateX(10px);
+
+		@include respond(md) {
+			visibility: visible;
+			opacity: 1;
+			transform: translateX(0);
+		}
+
+		& svg {
+			width: 1.2rem;
+			height: 1.2rem;
+			transition: fill 0.2s;
+			fill: currentColor;
+		}
+
+		&.is-active {
+			display: flex;
+			color: var(--white);
+			background-color: var(--black);
+			visibility: visible;
+			opacity: 1;
+			transform: translateX(0);
+		}
+
+		&:hover {
+			color: var(--white);
+			background-color: var(--black);
+		}
+	}
+
+	&__link {
+		display: flex;
+		text-decoration: none;
+		color: inherit;
+	}
+}
+
+.product-card:hover .product-links__item {
+	display: flex;
+	visibility: visible;
+	opacity: 1;
+	transform: translateX(0);
+}
+
+/* === ИНФОРМАЦИЯ О ТОВАРЕ === */
+.product-info {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	width: 100%;
+	margin-bottom: 1rem;
+}
+
+.product-name {
+	font-size: var(--font-size-body);
+	font-weight: 700;
+	line-height: 1.3;
+	text-transform: uppercase;
+	color: var(--black);
+}
+
+.product-article {
+	font-size: var(--font-size-body);
+	font-weight: 400;
+	color: var(--gray-400);
+}
+
+.product-price {
+	font-size: var(--font-size-body-lg);
+	font-weight: 700;
+	text-transform: uppercase;
+	color: var(--black);
+}
+
+/* === ВЫПАДАЮЩИЙ БЛОК (ДЕЙСТВИЯ) === */
+.product-actions {
+	position: absolute;
+	z-index: 20;
+	top: 100%;
+	left: 0;
+	display: grid;
+	gap: 0.5rem;
+	width: 100%;
+	margin-top: -2rem;
+	padding: 0.625rem 1.25rem 1.25rem;
+	background: var(--white);
+	border: var(--border);
+	border-top: none;
+	border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+	box-shadow: var(--shadow);
+	visibility: hidden;
+	opacity: 0;
+	transition:
+		opacity 0.3s ease,
+		transform 0.3s ease;
+	transform: translateY(-10px);
+	pointer-events: none;
+
+	@include respond(xl) {
+		padding: 0.625rem 1rem 1rem;
+	}
+
+	/* MOBILE (Без изменений) */
+	@include respond(md) {
+		position: static;
+		display: flex;
+		flex-direction: column-reverse;
+		gap: 15px;
+		width: 100%;
+		margin-top: 1rem;
+		padding: 0;
+		border: none;
+		box-shadow: none;
+		visibility: visible;
+		opacity: 1;
+		transform: none;
+		pointer-events: auto;
+	}
+
+	&__button {
+		width: 100%;
+		padding: 13px 20px;
+	}
+}
+
+.product-card:hover .product-actions {
+	margin-top: -1.5rem;
+	border: transparent;
+	box-shadow: var(--shadow);
+	visibility: visible;
+	opacity: 1;
+	transform: translateY(0);
+	pointer-events: auto;
+
+	@include respond(md) {
+		margin-top: 0;
+		box-shadow: none;
+		transform: none;
+	}
+}
+
+/* === ЭЛЕМЕНТЫ ВНУТРИ ACTIONS === */
+.product-wrapper {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 0.8rem;
+	margin-bottom: 1rem;
+
+	@include respond(sm) {
+		// flex-direction: column;
+		margin-bottom: 0;
+	}
+}
+
+.add-to-cart {
+	width: 100%;
+	height: 2.4rem;
+	font-weight: 500;
+}

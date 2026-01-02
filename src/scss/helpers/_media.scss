@@ -1,0 +1,53 @@
+@use 'functions' as *;
+@use 'sass:map';
+
+// $desktop: 1400px;
+// $tablet: 992px;
+// $mobile: 768px;
+
+$breakpoints: (
+	'': 0,
+	'xs': rem(360),
+	'sm': rem(576),
+	'md': rem(768),
+	'lg': rem(992),
+	'xl': rem(1200),
+	'xxl': rem(1400),
+);
+
+$displays: none, inline, inline-block, block, flex, inline-flex, grid;
+
+// Универсальный миксин для медиазапросов
+// type: 'max' или 'min'
+// Примеры использования:
+// @include respond(md) { ... }  // <= 1440.98px
+// @include respond(tablet, min) { ... }  // >= 1023.98px
+@mixin respond($breakpoint, $type: max) {
+	$width: map.get($breakpoints, $breakpoint);
+
+	@if $type == max {
+		@media (max-width: $width) {
+			@content;
+		}
+	} @else if $type == min {
+		@media (min-width: $width) {
+			@content;
+		}
+	}
+}
+
+@mixin hover($hasActiveEffectOnMobile: true) {
+	@media (any-hover: hover) {
+		&:hover {
+			@content;
+		}
+	}
+
+	@if $hasActiveEffectOnMobile {
+		@media (any-hover: none) {
+			&:active {
+				@content;
+			}
+		}
+	}
+}

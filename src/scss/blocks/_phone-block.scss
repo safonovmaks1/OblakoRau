@@ -1,0 +1,19 @@
+@use 'helpers' as *;
+
+.phone-block {
+	display: flex;
+	align-items: center;
+	gap: 0.3rem;
+	font-size: var(--font-size-body-lg);
+	font-weight: 500;
+	white-space: nowrap;
+	color: var(--gray-500);
+
+	@include hover {
+		color: var(--black);
+
+		svg {
+			fill: var(--black);
+		}
+	}
+}

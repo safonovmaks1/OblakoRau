@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		@@include('../partials/_config/head.html', {"title": "Магазин брендовой одежды OBLACKO RAI"})
+	</head>
+	<body>
+		@@include('../partials/header.html')
+		<!-- header -->
+		<main>
+			<section class="section">
+				<div class="container">
+					<header class="section-header">
+						<h2 class="section-header__title section-header__title--big">Ваши подписки</h2>
+					</header>
+					<!--  -->
+					<nav class="breadcrumbs" aria-label="Хлебные крошки">
+						<ul class="breadcrumbs__list">
+							<li class="breadcrumbs__item">
+								<a class="breadcrumbs__link" href="/">Главная</a>
+							</li>
+							<li class="breadcrumbs__item">
+								<a class="breadcrumbs__link" href="user.html">Личный кабинет</a>
+							</li>
+							<li class="breadcrumbs__item">
+								<span class="breadcrumbs__link" aria-current="page">Подписки</span>
+							</li>
+						</ul>
+					</nav>
+					<!--  -->
+					<div class="section__wrapper">
+						<aside class="d-none d-lg-block">
+							<nav class="left-menu" aria-label="Дополнительное меню">
+								<ul class="left-menu__list">
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="user.html">Личный кабинет</a>
+									</li>
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="user-current-order.html">Текущие заказы</a>
+									</li>
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="404.html">Личный счет</a>
+									</li>
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="user-profile.html">Профиль</a>
+									</li>
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="404.html">История заказов</a>
+									</li>
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="404.html">Избранные товары</a>
+									</li>
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="404.html">Корзина</a>
+									</li>
+									<li class="left-menu__item">
+										<a class="left-menu__link left-menu__link--active" href="user-subscribe.html">Подписки</a>
+									</li>
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="404.html">Контакты</a>
+									</li>
+								</ul>
+							</nav>
+						</aside>
+						<!--  -->
+						<div class="section__content">
+							<div class="account-section">
+								<h3 class="account-section__heading">Настройки подписки</h3>
+
+								<form class="form form--wide" id="subscription-form" novalidate>
+									<div class="form__body">
+										<div class="form__item">
+											<div class="form__row">
+												<div class="form__field">
+													<div class="form__error"><span>Введите E-mail</span></div>
+													<input name="email" type="email" class="form__input _req" placeholder="E-mail" autocomplete="email" />
+												</div>
+												<div class="form__hint">После изменения адреса вам будет выслан код подтверждения. Подписка неактивна до ввода кода.</div>
+											</div>
+										</div>
+										<!--  -->
+										<div class="form__item">
+											<div class="form__label form__label--big">Рубрики подписки</div>
+
+											<div class="checkbox radio-checkbox">
+												<input id="news" type="checkbox" name="news" class="radio-checkbox__input" checked />
+												<label for="news" class="radio-checkbox__label">
+													<span class="radio-checkbox__circle"></span> <span class="radio-checkbox__text">Новости магазина</span>
+												</label>
+											</div>
+										</div>
+										<!--  -->
+
+										<div class="form__item">
+											<div class="form__label form__label--big">Предпочтительный формат</div>
+
+											<div>
+												<div class="checkbox radio-checkbox">
+													<input id="text-format" type="radio" name="format" value="text" class="radio-checkbox__input" checked />
+													<label for="text-format" class="radio-checkbox__label">
+														<span class="radio-checkbox__circle"></span>
+														<span class="radio-checkbox__text">Текст</span>
+													</label>
+												</div>
+
+												<span style="color: var(--gray-400)">/</span>
+
+												<div class="checkbox radio-checkbox">
+													<input id="html-format" type="radio" name="format" value="html" class="radio-checkbox__input" />
+													<label for="html-format" class="radio-checkbox__label">
+														<span class="radio-checkbox__circle"></span>
+														<span class="radio-checkbox__text">HTML</span>
+													</label>
+												</div>
+											</div>
+										</div>
+										<!--  -->
+										<div class="form__item">
+											<div class="form__field">
+												<div class="form__error"><span>Согласитесь с условиями</span></div>
+												<div class="checkbox radio-checkbox">
+													<input id="subscribe-agreement" type="checkbox" name="agreement" class="radio-checkbox__input" />
+													<label for="subscribe-agreement" class="radio-checkbox__label">
+														<span class="radio-checkbox__circle"></span>
+														<span class="radio-checkbox__text">
+															Я согласен на
+															<a target="_blank" href="politics.html">обработку персональных данных</a>*
+														</span>
+													</label>
+												</div>
+											</div>
+										</div>
+										<!--  -->
+										<div class="flex">
+											<button type="submit" class="button">Сохранить</button>
+											<button type="button" class="button button--inverse" onclick="this.form.reset()">Сбросить</button>
+										</div>
+									</div>
+								</form>
+
+								<p class="alert alert-success hidden">Настройки подписки обновлены</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		@@include('../partials/footer.html')
+		<!-- footer -->
+		@@include('../partials/modals.html')
+		<!-- Modals -->
+		@@include('../partials/scroll-up.html')
+		<!-- Scroll - up -->
+	</body>
+</html>

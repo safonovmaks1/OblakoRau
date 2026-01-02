@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		@@include('../partials/_config/head.html', {"title": "Магазин брендовой одежды OBLACKO RAI"})
+	</head>
+	<body>
+		@@include('../partials/header.html')
+		<!-- header -->
+		<main>
+			<section class="section">
+				<div class="container">
+					<header class="section-header">
+						<h2 class="section-header__title section-header__title--big">Контакты</h2>
+					</header>
+					<!--  -->
+					<nav class="breadcrumbs" aria-label="Хлебные крошки">
+						<ul class="breadcrumbs__list">
+							<li class="breadcrumbs__item">
+								<a class="breadcrumbs__link" href="/">Главная</a>
+							</li>
+							<li class="breadcrumbs__item">
+								<a class="breadcrumbs__link" href="about.html">О компании</a>
+							</li>
+							<li class="breadcrumbs__item">
+								<span class="breadcrumbs__link" aria-current="page">Контакты</span>
+							</li>
+						</ul>
+					</nav>
+					<!--  -->
+					<div class="section__wrapper">
+						<div class="section__content">
+							<div class="contacts">
+								<div class="contacts__info">
+									<div class="contacts__images">
+										<img class="contacts__image" src="images/contacts.webp" alt="contacts" width="840" height="614" loading="lazy" />
+									</div>
+
+									<p class="contacts__text">Товары доставляются только курьерами. В офисе клиентов не принимаем.</p>
+
+									<div class="contacts__blocks">
+										<ul class="contacts__list">
+											<li class="contacts__item">
+												<span>АДРЕС</span>
+												<div>г. Москва, улица Садовая-Кудринская, д. 25</div>
+											</li>
+											<li class="contacts__item">
+												<span>Телефон</span>
+												<a href="tel:+77777777777">+7 (777) 777-7777</a>
+											</li>
+											<li class="contacts__item">
+												<span>Режим работы</span>
+												Пн-Пт: с 09:00 до 21:00 <br />Сб: с 10:00 до 18:00 <br />Вс: выходной
+											</li>
+											<li class="contacts__item">
+												<span>E-mail</span>
+												<a href="mailto:info@bigpapabrand.com">info@bigpapabrand.com</a>
+											</li>
+										</ul>
+									</div>
+
+									<div class="contacts__footer">
+										<ul class="contacts__socials">
+											<li class="contacts__socials-item">
+												<a
+													class="contacts__socials-link contacts__socials-link-tg"
+													href="http://telegram.com"
+													target="_blank"
+													rel="noopener noreferrer"
+													aria-label="Наш Telegram"
+												>
+													<svg class="icon icon-white">
+														<use xlink:href="images/sprite.symbol.svg#telegram"></use>
+													</svg>
+												</a>
+											</li>
+											<li class="contacts__socials-item">
+												<a
+													class="contacts__socials-link contacts__socials-link-wa"
+													href="http://whatsapp.com"
+													target="_blank"
+													rel="noopener noreferrer"
+													aria-label="Наш WhatsApp"
+												>
+													<svg class="icon icon-white">
+														<use xlink:href="images/sprite.symbol.svg#whatsapp"></use>
+													</svg>
+												</a>
+											</li>
+										</ul>
+										<hr class="contacts__socials-line" />
+									</div>
+
+									<button class="button button--inverse" data-modal-open="#question">написать сообщение</button>
+								</div>
+
+								<div class="contacts__map">
+									<div id="map" class="ymap-container"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		@@include('../partials/footer.html')
+		<!-- footer -->
+		@@include('../partials/modals.html')
+		<!-- Modals -->
+		@@include('../partials/scroll-up.html')
+		<!-- Scroll - up -->
+	</body>
+</html>

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		@@include('../partials/_config/head.html', {"title": "Магазин брендовой одежды OBLACKO RAI"})
+	</head>
+	<body>
+		@@include('../partials/header.html')
+		<!-- header -->
+		<main>
+			<section class="section">
+				<div class="container">
+					<header class="section-header">
+						<h2 class="section-header__title section-header__title--big">Избранные товары</h2>
+						<button class="button button--link">Очистить</button>
+					</header>
+					<!--  -->
+					<nav class="breadcrumbs" aria-label="Хлебные крошки">
+						<ul class="breadcrumbs__list">
+							<li class="breadcrumbs__item">
+								<a class="breadcrumbs__link" href="/">Главная</a>
+							</li>
+							<li class="breadcrumbs__item">
+								<a class="breadcrumbs__link" href="auth.html">Личный кабинет</a>
+							</li>
+							<li class="breadcrumbs__item">
+								<span class="breadcrumbs__link" aria-current="page">Избранные товары</span>
+							</li>
+						</ul>
+					</nav>
+					<!--  -->
+					<div class="section__wrapper">
+						<aside class="d-none d-lg-block">
+							<nav class="left-menu" aria-label="Дополнительное меню">
+								<ul class="left-menu__list">
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="auth.html">Личный кабинет</a>
+									</li>
+								</ul>
+							</nav>
+						</aside>
+						<!--  -->
+						<div class="section__content">
+							<div class="favorite">
+								<div class="favorite__empty hidden">
+									<p class="favorite__empty-text">Список избранных элементов пуст</p>
+								</div>
+
+								<ul class="favorite__list">
+									<li class="favorite__item">
+										<!--  -->
+										@@include('../partials/product-card.html', {"title": "СУМКА LOUIS VUITTON", "images": "images/card/l-v.jpg", "active": "is-active"})
+									</li>
+									<!--  -->
+									<li class="favorite__item">
+										<!--  -->
+										@@include('../partials/product-card.html', {"title": "СУМКА LOUIS VUITTON", "images": "images/card/l-v.jpg", "active": "is-active"})
+									</li>
+									<!--  -->
+									<li class="favorite__item">
+										<!--  -->
+										@@include('../partials/product-card.html', {"title": "СУМКА LOUIS VUITTON", "images": "images/card/l-v.jpg", "active": "is-active"})
+									</li>
+									<!--  -->
+									<li class="favorite__item">
+										<!--  -->
+										@@include('../partials/product-card.html', {"title": "СУМКА LOUIS VUITTON", "images": "images/card/l-v.jpg", "active": "is-active"})
+									</li>
+									<!--  -->
+									<li class="favorite__item">
+										<!--  -->
+										@@include('../partials/product-card.html', {"title": "СУМКА LOUIS VUITTON", "images": "images/card/l-v.jpg", "active": "is-active"})
+									</li>
+									<!--  -->
+									<li class="favorite__item">
+										<!--  -->
+										@@include('../partials/product-card.html', {"title": "СУМКА LOUIS VUITTON", "images": "images/card/l-v.jpg", "active": "is-active"})
+									</li>
+									<!--  -->
+									<li class="favorite__item">
+										<!--  -->
+										@@include('../partials/product-card.html', {"title": "СУМКА LOUIS VUITTON", "images": "images/card/l-v.jpg", "active": "is-active"})
+									</li>
+									<!--  -->
+									<li class="favorite__item">
+										<!--  -->
+										@@include('../partials/product-card.html', {"title": "СУМКА LOUIS VUITTON", "images": "images/card/l-v.jpg", "active": "is-active"})
+									</li>
+									<!--  -->
+								</ul>
+
+								<div class="favorite__button-more">
+									<button class="button" type="button">загрузить еще</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		@@include('../partials/footer.html')
+		<!-- footer -->
+		@@include('../partials/modals.html')
+		<!-- Modals -->
+		@@include('../partials/scroll-up.html')
+		<!-- Scroll - up -->
+	</body>
+</html>

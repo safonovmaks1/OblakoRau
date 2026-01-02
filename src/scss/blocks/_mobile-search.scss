@@ -1,0 +1,207 @@
+@use 'helpers' as *;
+
+.mobile-search-wrapper {
+	position: fixed;
+	z-index: 200;
+	inset: 0;
+	visibility: hidden;
+	transition: visibility 0.3s;
+}
+
+.mobile-search-wrapper.open {
+	visibility: visible;
+}
+
+.mobile-search-backdrop {
+	position: absolute;
+	inset: 0;
+	background-color: var(--overlay); /* Полупрозрачный черный */
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+.mobile-search-wrapper.open .mobile-search-backdrop {
+	opacity: 1;
+}
+
+.mobile-search-panel {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-height: 80vh;
+	background-color: #ffffff;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+	transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+	transform: translateY(-100%);
+}
+
+.mobile-search-wrapper.open .mobile-search-panel {
+	transform: translateY(0);
+}
+
+.mobile-search-header {
+	flex-shrink: 0;
+	position: relative;
+	z-index: 20;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 70px;
+	padding: 15px 20px;
+	background: #ffffff;
+	border-bottom: var(--border);
+}
+
+.ms-input-wrapper {
+	flex-grow: 1;
+	margin-right: 15px;
+}
+
+.ms-input {
+	width: 100%;
+	padding-left: 10px;
+	font-size: var(--font-size-body-lg);
+	border: none;
+	outline: none;
+}
+
+.ms-controls {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
+
+.ms-scope {
+	position: relative;
+	font-size: var(--font-size-body);
+	color: #333333;
+}
+
+.ms-scope-current {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	cursor: pointer;
+}
+
+.ms-scope-dropdown {
+	position: absolute;
+	top: 100%;
+	right: 0;
+	width: 150px;
+	margin-top: 15px;
+	padding: 0;
+	background: #ffffff;
+	border: var(--border);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+	list-style: none;
+	visibility: hidden;
+	opacity: 0;
+	transition: 0.2s;
+	transform: translateY(-5px);
+}
+
+.ms-scope.active .ms-scope-dropdown {
+	visibility: visible;
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.ms-scope-dropdown li {
+	padding: 10px 15px;
+	cursor: pointer;
+}
+
+.ms-scope-dropdown li:hover {
+	background: #f5f5f5;
+}
+
+.ms-scope-dropdown li.selected {
+	font-weight: 700;
+	background: #fafafa;
+}
+
+/* Кнопки */
+.ms-btn-find {
+	padding: 10px 20px;
+	font-size: var(--font-size-body);
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #ffffff;
+	background-color: #3c3c3c;
+	border: none;
+	border-radius: var(--radius-sm);
+	cursor: pointer;
+}
+
+.ms-btn-close {
+	display: flex;
+	padding: 0;
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+/* Тело с результатами */
+.mobile-search-body {
+	overflow-y: auto; /* Скролл внутри панели, если результатов много */
+	background-color: #ffffff;
+}
+
+/* Карточка товара */
+.ms-search-item {
+	display: flex;
+	align-items: center;
+	padding: 15px 20px;
+	text-decoration: none;
+	color: #333333;
+	border-bottom: var(--border);
+}
+
+.ms-item-img {
+	width: 60px;
+	height: 60px;
+	margin-right: 20px;
+	background: #f0f0f0;
+	object-fit: cover;
+}
+
+.ms-item-info {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.ms-item-title {
+	font-size: var(--font-size-body-lg);
+	line-height: 1.3;
+	text-transform: uppercase;
+}
+
+.ms-item-title b {
+	font-weight: 900;
+	color: #000000;
+}
+
+.ms-item-price {
+	font-size: var(--font-size-body);
+	color: #666666;
+}
+
+.ms-results-footer {
+	width: 100%;
+	padding: 1.5rem 0;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: var(--black);
+	background-color: transparent;
+	border-color: transparent;
+	border-radius: 0;
+
+	&:hover {
+		color: var(--white);
+		background-color: var(--black);
+	}
+}

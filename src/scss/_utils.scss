@@ -1,0 +1,94 @@
+@use 'helpers' as *;
+
+@each $bp-name, $bp-size in $breakpoints {
+	@if $bp-size == 0 {
+		// базовые классы без медиа-запроса
+		@each $display in $displays {
+			.d-#{$display} {
+				display: $display !important;
+			}
+		}
+	} @else {
+		// классы внутри медиа-запроса
+		@media (min-width: $bp-size) {
+			@each $display in $displays {
+				.d-#{$bp-name}-#{$display} {
+					display: $display !important;
+				}
+			}
+		}
+	}
+}
+
+.visually-hidden {
+	@include visually-hidden;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.bg {
+	background-color: var(--white-100);
+}
+
+.position-static {
+	position: static !important;
+}
+
+.ml-auto {
+	margin-left: auto;
+}
+
+.m-auto {
+	margin: 0 auto;
+}
+
+.w-100 {
+	width: 100%;
+}
+
+.border {
+	padding: 0 1rem;
+	border: var(--border);
+	border-radius: var(--radius-sm);
+}
+
+.flex {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+
+	@include respond(xl) {
+		gap: 1rem;
+	}
+}
+
+.flex-sb {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
+}
+
+.flex-center {
+	display: flex;
+	justify-content: center;
+}
+
+.tag {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.2rem 0.5rem;
+	font-size: var(--font-size-body);
+	font-weight: 400;
+	color: var(--gray-400);
+	border: var(--border);
+	border-radius: var(--radius-sm);
+
+	& svg {
+		width: 0.5rem;
+	}
+}

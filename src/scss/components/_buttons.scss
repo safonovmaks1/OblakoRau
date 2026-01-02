@@ -1,0 +1,70 @@
+@use 'helpers' as *;
+
+button {
+	padding: 0;
+	color: inherit;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+
+.button {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0.9rem 1.5rem;
+	font-size: var(--font-size-small);
+	line-height: 1;
+	letter-spacing: 0.09em;
+	text-align: center;
+	text-transform: uppercase;
+	color: var(--white);
+	background-color: var(--black);
+	border: var(--border-dark);
+	border-radius: var(--radius-sm);
+	transition: all var(--transition-duration) ease;
+
+	@include hover {
+		color: var(--black);
+		background-color: var(--white);
+	}
+
+	&--inverse {
+		color: var(--black);
+		background-color: var(--white);
+
+		@include hover {
+			color: var(--white);
+			background-color: var(--black);
+		}
+	}
+
+	&--link {
+		padding: 0;
+		font-weight: 500;
+		text-decoration: none;
+		color: var(--gray-400);
+		background-color: transparent;
+		border: none;
+
+		@include hover {
+			color: var(--black);
+		}
+	}
+
+	&--w100 {
+		width: 100%;
+	}
+}
+
+.telegram-btn {
+	width: 100%;
+	color: var(--white);
+	background-color: var(--telegram);
+	border: 1px solid var(--telegram);
+
+	@include hover {
+		color: var(--white);
+		background-color: #00aaff;
+	}
+}

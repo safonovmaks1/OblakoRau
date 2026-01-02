@@ -1,0 +1,55 @@
+@use 'helpers' as *;
+
+.about-main {
+	display: flex;
+	flex-direction: column;
+	max-width: 75rem;
+	margin: 0 auto;
+
+	&__info {
+		position: relative;
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		max-height: 10rem;
+		margin-bottom: 2.5rem;
+		text-align: justify;
+		transition: max-height 0.4s ease;
+
+		&::after {
+			content: '';
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			height: 7rem;
+			background: linear-gradient(to top, #ffffff 20%, rgba(255, 255, 255, 0.5) 100%);
+			transition: opacity 0.4s ease;
+			pointer-events: none;
+		}
+
+		&.is-open {
+			&::after {
+				opacity: 0;
+			}
+		}
+	}
+
+	&__title {
+		font-size: var(--font-size-h2);
+	}
+
+	&__text {
+		font-size: var(--font-size-body-lg);
+	}
+
+	&__subtitle {
+		font-size: var(--font-size-h3);
+	}
+
+	&__button {
+		align-items: start;
+		width: max-content;
+	}
+}

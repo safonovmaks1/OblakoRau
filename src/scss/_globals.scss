@@ -1,0 +1,37 @@
+@use 'helpers' as *;
+
+body {
+	display: flex;
+	flex-direction: column;
+	font-family: var(--font-family-base);
+	font-size: 13px;
+	font-weight: 400;
+	color: var(--black);
+	background-color: var(--white);
+}
+
+html.is-lock,
+body.is-lock {
+	overflow: hidden;
+	touch-action: none;
+}
+
+main {
+	flex-grow: 1;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+address {
+	font-style: normal;
+}
+
+
+
+
+
+
+

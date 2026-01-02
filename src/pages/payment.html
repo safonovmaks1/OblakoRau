@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		@@include('../partials/_config/head.html', {"title": "Магазин брендовой одежды OBLACKO RAI"})
+	</head>
+	<body>
+		@@include('../partials/header.html')
+		<!-- header -->
+		<main>
+			<section class="section">
+				<div class="container">
+					<header class="section-header">
+						<h2 class="section-header__title section-header__title--big">Оплата</h2>
+					</header>
+					<!--  -->
+					<nav class="breadcrumbs" aria-label="Хлебные крошки">
+						<ul class="breadcrumbs__list">
+							<li class="breadcrumbs__item">
+								<a class="breadcrumbs__link" href="/">Главная</a>
+							</li>
+							<li class="breadcrumbs__item">
+								<a class="breadcrumbs__link" href="help.html">Помощь</a>
+							</li>
+							<li class="breadcrumbs__item">
+								<span class="breadcrumbs__link" aria-current="page">Оплата</span>
+							</li>
+						</ul>
+					</nav>
+					<!--  -->
+					<div class="section__wrapper">
+						<aside class="d-none d-lg-block">
+							<nav class="left-menu" aria-label="Дополнительное меню">
+								<ul class="left-menu__list">
+									<li class="left-menu__item">
+										<a class="left-menu__link left-menu__link--active" href="payment.html">Оплата</a>
+									</li>
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="delivery.html">Доставка</a>
+									</li>
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="warranty.html">Возврат</a>
+									</li>
+								</ul>
+							</nav>
+						</aside>
+						<!--  -->
+						<div class="section__content">
+							<div class="text-content">
+								<h2>СПОСОБЫ ОПЛАТЫ</h2>
+
+								<ul>
+									<li>Наличный расчет - курьеру при заказе доставки по Москве.</li>
+									<li>Безналичный расчет - на карту Сбербанка или Альфа-банка переводом онлайн.</li>
+								</ul>
+
+								<p>
+									При доставке с возможностью примерки (по Москве) оплата производится курьеру наличными или перевод онлайн на карту Сбербанка, Альфа банка,
+									Тинькофф или ВТБ.
+								</p>
+
+								<p>Если ничего не подошло - оплачивается только стоимость доставки.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		@@include('../partials/footer.html')
+		<!-- footer -->
+		@@include('../partials/modals.html')
+		<!-- Modals -->
+		@@include('../partials/scroll-up.html')
+		<!-- Scroll - up -->
+	</body>
+</html>

@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		@@include('../partials/_config/head.html', {"title": "Магазин брендовой одежды OBLACKO RAI"})
+	</head>
+	<body>
+		@@include('../partials/header.html')
+		<!-- header -->
+		<main>
+			<section class="section">
+				<div class="container">
+					<header class="section-header">
+						<h2 class="section-header__title section-header__title--big">Личный кабинет</h2>
+					</header>
+					<!--  -->
+					<nav class="breadcrumbs" aria-label="Хлебные крошки">
+						<ul class="breadcrumbs__list">
+							<li class="breadcrumbs__item">
+								<a class="breadcrumbs__link" href="/">Главная</a>
+							</li>
+							<li class="breadcrumbs__item">
+								<span class="breadcrumbs__link" aria-current="page">Личный кабинет</span>
+							</li>
+						</ul>
+					</nav>
+					<!--  -->
+					<div class="section__wrapper">
+						<aside class="d-none d-lg-block">
+							<nav class="left-menu" aria-label="Дополнительное меню">
+								<ul class="left-menu__list">
+									<li class="left-menu__item">
+										<a class="left-menu__link left-menu__link--active" href="user.html">Личный кабинет</a>
+									</li>
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="user-current-order.html">Текущие заказы</a>
+									</li>
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="404.html">Личный счет</a>
+									</li>
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="user-profile.html">Профиль</a>
+									</li>
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="user-history-order.html">История заказов</a>
+									</li>
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="404.html">Избранные товары</a>
+									</li>
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="404.html">Корзина</a>
+									</li>
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="user-subscribe.html">Подписки</a>
+									</li>
+									<li class="left-menu__item">
+										<a class="left-menu__link" href="404.html">Контакты</a>
+									</li>
+								</ul>
+							</nav>
+						</aside>
+						<!--  -->
+						<div class="section__content">
+							<ul class="account__list">
+								<li class="account__item">
+									<a class="account__link" href="user-current-order.html">
+										<svg class="icon account__link-icon">
+											<use xlink:href="images/sprite.symbol.svg#file-check"></use>
+										</svg>
+										<span class="account__link-text">текущие заказы</span>
+									</a>
+								</li>
+								<li class="account__item">
+									<a class="account__link" href="404.html">
+										<svg class="icon account__link-icon">
+											<use xlink:href="images/sprite.symbol.svg#bank-card"></use>
+										</svg>
+										<span class="account__link-text">личный счет</span>
+									</a>
+								</li>
+								<li class="account__item">
+									<a class="account__link" href="user-profile.html">
+										<svg class="icon account__link-icon">
+											<use xlink:href="images/sprite.symbol.svg#user"></use>
+										</svg>
+										<span class="account__link-text">профиль</span>
+									</a>
+								</li>
+								<li class="account__item">
+									<a class="account__link" href="user-history-order.html">
+										<svg class="icon account__link-icon">
+											<use xlink:href="images/sprite.symbol.svg#file-list"></use>
+										</svg>
+										<span class="account__link-text">история заказов</span>
+									</a>
+								</li>
+								<li class="account__item">
+									<a class="account__link" href="404.html">
+										<svg class="icon account__link-icon">
+											<use xlink:href="images/sprite.symbol.svg#heart"></use>
+										</svg>
+										<span class="account__link-text">избранные товары</span>
+									</a>
+								</li>
+								<li class="account__item">
+									<a class="account__link" href="404.html">
+										<svg class="icon account__link-icon">
+											<use xlink:href="images/sprite.symbol.svg#shopping-cart"></use>
+										</svg>
+										<span class="account__link-text">корзина</span>
+									</a>
+								</li>
+								<li class="account__item">
+									<a class="account__link" href="user-subscribe.html">
+										<svg class="icon account__link-icon">
+											<use xlink:href="images/sprite.symbol.svg#send-plane"></use>
+										</svg>
+										<span class="account__link-text">подписки</span>
+									</a>
+								</li>
+								<li class="account__item">
+									<a class="account__link" href="404.html">
+										<svg class="icon account__link-icon">
+											<use xlink:href="images/sprite.symbol.svg#map-pin"></use>
+										</svg>
+										<span class="account__link-text">контакты</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		@@include('../partials/footer.html')
+		<!-- footer -->
+		@@include('../partials/modals.html')
+		<!-- Modals -->
+		@@include('../partials/scroll-up.html')
+		<!-- Scroll - up -->
+	</body>
+</html>

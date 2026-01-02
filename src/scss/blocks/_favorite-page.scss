@@ -1,0 +1,37 @@
+@use 'helpers' as *;
+
+.favorite {
+	&__empty {
+		max-width: 100%;
+		padding: 1rem;
+		font-size: var(--font-size-body-lg);
+		color: #36c905;
+		background-color: #e3ffda;
+		border: var(--border);
+		border-radius: var(--radius);
+	}
+
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+		gap: 1rem;
+
+		@include respond(xl) {
+			grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+		}
+
+		@include respond(md) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include respond(xs) {
+			gap: 0.9rem;
+		}
+	}
+
+	&__button-more {
+		display: flex;
+		justify-content: center;
+		margin: 2.5rem 0;
+	}
+}

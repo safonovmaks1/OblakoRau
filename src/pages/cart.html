@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		@@include('../partials/_config/head.html', {"title": "Магазин брендовой одежды OBLACKO RAI"})
+	</head>
+	<body>
+		@@include('../partials/header.html')
+		<!-- header -->
+		<main>
+			<section class="section">
+				<div class="container">
+					<header class="section-header">
+						<h2 class="section-header__title section-header__title--big">Оформление заказа</h2>
+					</header>
+					<!--  -->
+
+					<div class="section__wrapper">
+						<div class="section__content">
+							<div class="cart">
+								<div class="cart__empty">
+									<div class="cart-empty">
+										<div class="cart-empty__img">
+											<svg class="icon cart-empty__icon cart-empty__icon--big">
+												<use xlink:href="images/sprite.symbol.svg#shopping-cart"></use>
+											</svg>
+										</div>
+
+										<div class="cart-empty__info">
+											<h3 class="cart-empty__title cart-empty__title--big">Ваша корзина пуста</h3>
+										</div>
+
+										<a class="button button--link cart-empty__link" href="/">Нажмите здесь, чтобы продолжить покупки</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--  -->
+			@@include('../partials/slider-viewed.html', {"title": "Ранее вы смотрели"})
+		</main>
+		@@include('../partials/footer.html')
+		<!-- footer -->
+		@@include('../partials/modals.html')
+		<!-- Modals -->
+		@@include('../partials/scroll-up.html')
+		<!-- Scroll - up -->
+	</body>
+</html>

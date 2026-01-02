@@ -1,0 +1,24 @@
+@use 'helpers' as *;
+
+:where(a, address) > .icon {
+	@include hover {
+		fill: currentColor;
+	}
+}
+
+.icon {
+	flex-shrink: 0;
+	display: inline-flex;
+	width: 1.5rem;
+	height: 1.5rem;
+	cursor: pointer;
+	fill: var(--gray-500);
+
+	&-white {
+		fill: #ffffff;
+
+		@include hover {
+			fill: #ffffff;
+		}
+	}
+}

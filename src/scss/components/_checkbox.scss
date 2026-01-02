@@ -1,0 +1,232 @@
+@use 'helpers' as *;
+
+//  SWITCH TOGGLE
+.switch-container {
+	flex-shrink: 0;
+	display: inline-flex; // Чтобы контейнер облегал содержимое
+
+	.switch-input {
+		@include visually-hidden; // Используем правильное скрытие
+
+		// Состояние Checked
+		&:checked + .switch-label {
+			.switch-slider {
+				background-color: var(--black);
+				border-color: var(--black); // Если есть бордер
+
+				&::before {
+					transform: translateX(0.875rem);
+				}
+			}
+		}
+
+		// Состояние Focus (для клавиатуры)
+		&:focus-visible + .switch-label .switch-slider {
+			box-shadow:
+				0 0 0 2px var(--white),
+				0 0 0 4px var(--black);
+		}
+
+		// Состояние Disabled (опционально)
+		&:disabled + .switch-label {
+			opacity: 0.5;
+			cursor: not-allowed;
+		}
+	}
+
+	.switch-label {
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+		cursor: pointer;
+		user-select: none;
+
+		.switch-slider {
+			flex-shrink: 0;
+			position: relative;
+			width: 2.2rem;
+			height: 1.35rem;
+			margin-right: 0.625rem;
+			background-color: var(--gray-500);
+			border-radius: 2rem;
+			transition: background-color 0.2s ease;
+
+			&::before {
+				content: '';
+				position: absolute;
+				bottom: 0.1563rem;
+				left: 0.2rem;
+				width: 1rem;
+				height: 1rem;
+				background-color: var(--white);
+				border-radius: 50%;
+				transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+			}
+
+			// @include respond(xs) {
+			// 	width: rem(33);
+			// 	height: rem(18);
+
+			// 	&::before {
+			// 		bottom: rem(1.5); // Поправка центровки для мобилки (18 - 15) / 2
+			// 	}
+			// }
+		}
+
+		.switch-text {
+			font-size: var(--font-size-body);
+			line-height: 1.2;
+
+			a {
+				position: relative;
+				z-index: 2;
+				text-decoration: underline;
+				color: var(--black);
+			}
+		}
+	}
+}
+
+//  2. RADIO / CHECKBOX
+.radio-checkbox {
+	display: inline-flex;
+	align-items: flex-start; // Лучше start, если текст будет в две строки
+
+	&__input {
+		@include visually-hidden; // Используем правильное скрытие
+
+		// CHECKED состояние
+		&:checked + .radio-checkbox__label .radio-checkbox__circle {
+			// SVG иконка галочки
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8L7 11L12 5' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+			background-position: center;
+			background-size: 70%; // Чуть уменьшим иконку, чтобы не прилипала к краям
+			background-repeat: no-repeat;
+			background-color: var(--black);
+			border-color: var(--black);
+		}
+
+		// FOCUS состояние (клавиатура)
+		&:focus-visible + .radio-checkbox__label .radio-checkbox__circle {
+			box-shadow:
+				0 0 0 2px var(--white),
+				0 0 0 4px var(--black);
+		}
+
+		// ERROR состояние (если валидация не прошла)
+		&._error + .radio-checkbox__label .radio-checkbox__circle {
+			border-color: var(--error);
+		}
+	}
+
+	&__label {
+		display: inline-flex;
+		align-items: center; // Или start, если текст длинный
+		gap: 0.625rem;
+		cursor: pointer;
+		transition: color 0.2s ease;
+		user-select: none;
+
+		// HOVER
+		// Важно: при ховере мы не должны красить кружок в черный полностью,
+		// иначе непонятно, нажат он уже или нет. Лучше затемнять границу.
+		@include hover {
+			.radio-checkbox__circle {
+				border-color: var(--black);
+			}
+		}
+	}
+
+	&__circle {
+		flex-shrink: 0; // Чтобы кружок не сжимался
+		width: 1.25rem;
+		height: 1.25rem;
+		background-color: var(--white);
+		border: var(--border); // Обычно 1px или 2px
+		border-radius: 50%; // Круглый чекбокс
+		transition: all 0.2s ease;
+
+		// Если нужно сделать квадратным (классический чекбокс)
+		// border-radius: var(--radius-sm);
+	}
+
+	&__text {
+		margin-top: 0.125rem;
+		font-size: var(--font-size-body);
+		line-height: 1.2;
+
+		a {
+			position: relative;
+			z-index: 2;
+			text-decoration: underline;
+			color: var(--black);
+		}
+	}
+}
+
+//  3. RADIO / CHECKBOX
+.checkbox-filter {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	user-select: none;
+
+	&__input {
+		display: none; // Скрываем стандартный
+	}
+
+	&__box {
+		flex-shrink: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 1.25rem;
+		height: 1.25rem;
+		margin-right: 0.75rem;
+		border: var(--border);
+		border-radius: 50%;
+		transition: all 0.2s;
+
+		&::before {
+			content: '';
+			width: 0.313rem;
+			height: 0.563rem;
+			margin-bottom: 0.125rem;
+			border: solid white;
+			border-width: 0 2px 2px 0;
+			opacity: 0;
+			transition: all 0.2s ease;
+			transform: rotate(45deg) scale(0);
+		}
+	}
+
+	&__text {
+		font-size: var(--font-size-body);
+		color: var(--black);
+	}
+
+	&__count {
+		margin-left: 0.25rem;
+		font-size: var(--font-size-body);
+		color: #999999;
+	}
+
+	&__input:checked + &__box {
+		background-color: var(--black);
+		border-color: var(--black);
+
+		&::before {
+			opacity: 1;
+			transform: rotate(45deg) scale(1);
+		}
+	}
+
+	&:hover &__box {
+		background-color: var(--black);
+		border-color: var(--black);
+	}
+
+	&:hover &__input:checked + &__box {
+		background-color: var(--black);
+	}
+}

@@ -1,0 +1,38 @@
+<div class="mobile-search-wrapper" id="mobileSearchWrapper">
+	<div class="mobile-search-backdrop" id="mobileSearchBackdrop"></div>
+
+	<div class="mobile-search-panel">
+		<form class="mobile-search-header" id="mobileSearchForm">
+			<div class="ms-input-wrapper">
+				<input type="text" placeholder="Поиск" class="ms-input" id="mobileSearchInput" autocomplete="off" />
+			</div>
+
+			<div class="ms-controls">
+				<div class="ms-scope" id="mobileSearchScope">
+					<div class="ms-scope-current">
+						<span class="ms-scope-text">Каталог</span>
+						<svg width="8" height="5" viewBox="0 0 5 3"><path d="M0,0 L2.5,3 L5,0" fill="#333" /></svg>
+					</div>
+					<ul class="ms-scope-dropdown">
+						<li data-value="catalog" class="selected">По каталогу</li>
+						<li data-value="all">По всему сайту</li>
+					</ul>
+				</div>
+
+				<a href="404.html" class="ms-btn-find">НАЙТИ</a>
+
+				<button type="button" class="ms-btn-close" id="mobileSearchClose">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.5">
+						<line x1="18" y1="6" x2="6" y2="18"></line>
+						<line x1="6" y1="6" x2="18" y2="18"></line>
+					</svg>
+				</button>
+			</div>
+		</form>
+
+		<div class="mobile-search-body">
+			<div class="ms-results-list" id="msResultsList"></div>
+			<a href="search.html" class="ms-results-footer" id="msResultsFooter" style="display: none">Все результаты</a>
+		</div>
+	</div>
+</div>

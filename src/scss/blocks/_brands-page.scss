@@ -1,0 +1,74 @@
+@use 'helpers' as *;
+
+.partners {
+	--col-min-width: #{26.875rem};
+
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(var(--col-min-width), 1fr));
+	gap: 1rem;
+	margin-bottom: 2.5rem;
+
+	@include respond(xxl) {
+		--col-min-width: #{15.625rem};
+	}
+
+	&__item {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 12.875rem;
+		padding: 1.25rem;
+		background-color: transparent;
+		border: var(--border);
+		border-radius: var(--radius-xl);
+		transition:
+			box-shadow 0.2s,
+			background-color 0.2s,
+			border-color 0.2s;
+
+		@include respond(xs) {
+			height: 10rem;
+			border-radius: var(--radius-lg);
+		}
+
+		@include hover {
+			background: var(--white);
+			border-color: transparent;
+			box-shadow: var(--shadow);
+		}
+	}
+
+	&__link {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 1rem;
+		width: 100%;
+		height: 100%;
+		text-decoration: none;
+	}
+
+	&__image {
+		width: auto;
+		max-width: 100%;
+		height: auto;
+		max-height: 5rem;
+		object-fit: contain;
+	}
+
+	&__text {
+		font-size: var(--font-size-body);
+		font-weight: 700;
+		letter-spacing: 0.1em;
+		text-align: center;
+		text-transform: uppercase;
+		color: var(--gray-600);
+		transition: color 0.2s;
+
+		.partners__item:hover & {
+			color: var(--black);
+		}
+	}
+}

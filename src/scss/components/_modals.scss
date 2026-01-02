@@ -1,0 +1,96 @@
+@use 'helpers' as *;
+
+.modal {
+	position: fixed;
+	z-index: var(--z-modal);
+	inset: 0;
+	overflow: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.2s ease;
+	pointer-events: none;
+
+	&__overlay {
+		position: absolute;
+		inset: 0;
+		background-color: var(--overlay);
+
+		// @include respond(xs) {
+		// 	display: none;
+		// }
+	}
+
+	&__dialog {
+		position: relative;
+		z-index: 1001;
+		overflow-y: auto;
+		max-height: 90vh;
+		padding: 1rem;
+		background-color: var(--white);
+		opacity: 0;
+		transition: all 0.2s ease;
+		transform: translateY(-20px) scale(0.95);
+
+		@include respond(md) {
+			max-height: 100vh;
+			padding: 1rem;
+			border-radius: 0;
+		}
+	}
+
+	&__close {
+		margin-left: auto;
+		background: transparent;
+		border: none;
+		cursor: pointer;
+
+		svg {
+			width: 1.5rem;
+			height: 1.5rem;
+			fill: var(--black);
+		}
+	}
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__title {
+		margin-bottom: 1.5rem;
+		font-size: var(--font-size-h2);
+		font-weight: 700;
+		color: var(--black);
+	}
+
+	&__thanks {
+		display: none;
+		padding: 3.438rem 1.875rem;
+		font-size: var(--font-size-h2);
+		font-weight: 700;
+		text-align: center;
+	}
+
+	&__content {
+		padding: 3.438rem 1.875rem;
+
+		@include respond(md) {
+			padding: 0;
+		}
+	}
+}
+
+.modal.is-open {
+	visibility: visible;
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.modal.is-open .modal__dialog {
+	opacity: 1;
+	transform: translateY(0) scale(1);
+}

@@ -1,0 +1,70 @@
+@use 'helpers' as *;
+
+.breadcrumbs {
+	/* nav по умолчанию block, но на всякий случай */
+	display: block;
+	margin-bottom: 2.5rem;
+
+	&--center {
+		/* Чтобы выровнять nav по центру, нужно воздействовать на список внутри,
+       либо использовать flex на самом nav */
+		display: flex;
+		justify-content: center;
+	}
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+
+		/* Убираем gap, чтобы контролировать отступы через разделитель,
+       либо оставляем маленьким */
+		gap: 0;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	&__item {
+		display: flex;
+		align-items: center;
+
+		&::before {
+			content: '—';
+			margin: 0 0.5rem;
+			color: var(--gray-500);
+			user-select: none;
+		}
+
+		&:first-child::before {
+			display: none;
+		}
+	}
+
+	&__link {
+		display: inline-flex;
+		align-items: center;
+		font-size: var(--font-size-body);
+		font-weight: 400;
+		text-decoration: none;
+		color: var(--gray-500);
+		transition: color 0.2s ease;
+
+		& svg {
+			width: 0.9rem;
+		}
+
+		&[href]:hover {
+			color: var(--black);
+
+			& svg {
+				fill: currentColor;
+			}
+		}
+
+		&[aria-current='page'] {
+			color: var(--black);
+			pointer-events: none;
+		}
+	}
+}

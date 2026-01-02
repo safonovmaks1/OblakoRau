@@ -1,0 +1,59 @@
+{
+	"name": "ms-gulp-template",
+	"version": "1.0.0",
+	"description": "gulp webpack babel scss",
+	"main": "gulpfile.js",
+	"scripts": {
+		"dev": "gulp",
+		"build": "gulp --production",
+		"del": "rm -rf node_modules dist"
+	},
+	"keywords": [
+		"gulp",
+		"webpack",
+		"Babel",
+		"scss"
+	],
+	"author": "Maksim Safonov <safonovmaks1@yandex.ru>",
+	"license": "WTFPL",
+	"type": "module",
+	"devDependencies": {
+		"@babel/core": "^7.28.4",
+		"@babel/preset-env": "^7.28.3",
+		"@eslint/js": "^9.35.0",
+		"browser-sync": "^3.0.4",
+		"css-loader": "^7.1.2",
+		"eslint": "^9.35.0",
+		"globals": "^16.3.0",
+		"gulp": "^5.0.1",
+		"gulp-autoprefixer": "^9.0.0",
+		"gulp-babel": "^8.0.0",
+		"gulp-changed": "^5.0.3",
+		"gulp-clean-css": "^4.3.0",
+		"gulp-file-include": "^2.3.0",
+		"gulp-group-css-media-queries": "^1.2.2",
+		"gulp-htmlmin": "^5.0.1",
+		"gulp-if": "^3.0.0",
+		"gulp-imagemin": "^9.1.0",
+		"gulp-notify": "^5.0.0",
+		"gulp-plumber": "^1.2.1",
+		"gulp-sass": "^6.0.1",
+		"gulp-svg-sprite": "^2.0.3",
+		"gulp-ttf2woff2": "^5.0.0",
+		"gulp-typograf": "^4.1.0",
+		"gulp-version-number": "^0.2.4",
+		"gulp-webp": "^5.0.0",
+		"prettier": "^3.6.2",
+		"sass": "^1.92.1",
+		"style-loader": "^4.0.0",
+		"stylelint": "^16.24.0",
+		"stylelint-config-standard-scss": "^15.0.1",
+		"stylelint-order": "^7.0.0",
+		"stylelint-scss": "^6.12.1",
+		"stylelint-selector-bem-pattern": "^4.0.1",
+		"webpack-stream": "^7.0.0"
+	},
+	"dependencies": {
+		"swiper": "^12.0.1"
+	}
+}
