@@ -67,7 +67,7 @@
 		align-items: center;
 		gap: 0.6rem;
 		font-size: var(--font-size-body-lg);
-		font-weight: 700;
+		font-weight: var(--font-bold);
 		text-transform: uppercase;
 	}
 
@@ -294,7 +294,7 @@
 				}
 
 				&.is-active {
-					font-weight: 700;
+					font-weight: var(--font-bold);
 				}
 			}
 		}

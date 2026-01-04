@@ -23,7 +23,7 @@
 		align-items: center;
 		width: 100%;
 		padding: 1rem;
-		font-weight: 500;
+		font-weight: var(--font-medium);
 		text-decoration: none;
 		color: var(--black);
 		transition:
@@ -31,7 +31,7 @@
 			color 0.2s;
 
 		&--active {
-			font-weight: 700;
+			font-weight: var(--font-bold);
 			background-color: var(--white-100);
 			pointer-events: none;
 		}

@@ -142,13 +142,13 @@
 .search-item-title {
 	font-size: var(--font-size-body);
 	text-transform: uppercase;
-	color: #333333;
+	color: var(--gray-400);
 }
 
 /* Жирный шрифт для совпадений */
 .search-item-title b {
-	font-weight: 700;
-	color: #000000;
+	font-weight: var(--font-bold);
+	color: var(--black);
 }
 
 .search-item-price {

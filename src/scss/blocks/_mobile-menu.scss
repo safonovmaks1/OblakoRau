@@ -163,7 +163,7 @@
 .menu__panel-title {
 	padding: 16px 20px;
 	font-size: var(--font-size-body);
-	font-weight: 700;
+	font-weight: var(--font-bold);
 	text-transform: uppercase;
 	background-color: var(--white-100);
 	border-bottom: var(--border);
@@ -176,7 +176,7 @@
 	gap: 12px;
 	padding: 20px;
 	font-size: var(--font-size-body-lg);
-	font-weight: 700;
+	font-weight: var(--font-bold);
 	border-bottom: var(--border);
 }
 
@@ -193,7 +193,7 @@
 .menu__contacts-title {
 	margin-bottom: 15px;
 	font-size: var(--font-size-body);
-	font-weight: 700;
+	font-weight: var(--font-bold);
 }
 
 .menu__contact-row {

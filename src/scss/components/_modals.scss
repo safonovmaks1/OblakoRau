@@ -63,7 +63,7 @@
 	&__title {
 		margin-bottom: 1.5rem;
 		font-size: var(--font-size-h2);
-		font-weight: 700;
+		font-weight: var(--font-bold);
 		color: var(--black);
 	}
 
@@ -71,7 +71,7 @@
 		display: none;
 		padding: 3.438rem 1.875rem;
 		font-size: var(--font-size-h2);
-		font-weight: 700;
+		font-weight: var(--font-bold);
 		text-align: center;
 	}
 

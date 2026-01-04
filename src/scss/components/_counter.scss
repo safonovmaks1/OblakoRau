@@ -15,7 +15,7 @@
 		justify-content: center;
 		align-items: center;
 		font-size: var(--font-size-body-lg);
-		font-weight: 400;
+		font-weight: var(--font-regular);
 		color: var(--gray-500);
 		background: none;
 		border: none;
@@ -29,7 +29,7 @@
 
 		// Число по центру
 		&.counter__number {
-			font-weight: 700;
+			font-weight: var(--font-bold);
 			color: var(--black);
 			cursor: default;
 		}

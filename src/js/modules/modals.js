@@ -60,10 +60,12 @@ function createModal(root) {
 }
 
 export function initModals() {
+	// Инициализация модалок...
 	document.querySelectorAll('[data-modal]').forEach((el) => {
 		modals.set('#' + el.id, createModal(el));
 	});
 
+	// Обработчики кнопок
 	document.querySelectorAll('[data-modal-open]').forEach((btn) => {
 		const target = btn.getAttribute('data-modal-open');
 		const modal = modals.get(target);
@@ -77,21 +79,30 @@ export function initModals() {
 			btn.addEventListener('mouseleave', modal.close);
 		} else {
 			btn.addEventListener('click', (e) => {
-				if (!window.matchMedia('(max-width: 48rem)').matches) {
-					return;
+				// === ИСПРАВЛЕНИЕ ЗДЕСЬ ===
+				// Проверяем: есть ли у кнопки атрибут data-mobile-only?
+				// Если ЕСТЬ, то применяем ограничение по ширине экрана.
+				// Если НЕТ, то пропускаем проверку и открываем модалку всегда.
+
+				if (btn.hasAttribute('data-mobile-only')) {
+					if (!window.matchMedia('(max-width: 48rem)').matches) {
+						return; // Если это десктоп, ничего не делаем
+					}
 				}
+				// ==========================
+
 				if (e.currentTarget.tagName === 'A') {
 					e.preventDefault();
 				}
 
-				// 1. Закрываем все другие открытые модалки перед открытием новой
+				// 1. Закрываем другие
 				modals.forEach((mInstance, mId) => {
 					if (mId !== target && mInstance.isOpen) {
 						mInstance.close();
 					}
 				});
 
-				// 2. Открываем целевую модалку
+				// 2. Открываем
 				modal.open();
 			});
 		}

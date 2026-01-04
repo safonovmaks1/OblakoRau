@@ -20,7 +20,7 @@
 		width: 2.5rem; // Чуть больше область клика (UX)
 		height: 2.5rem;
 		font-size: var(--font-size-body);
-		font-weight: 700;
+		font-weight: var(--font-bold);
 		text-decoration: none;
 		color: var(--black);
 		border-radius: 50%; // Круг

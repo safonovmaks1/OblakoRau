@@ -4,7 +4,7 @@
 	&__title {
 		margin-bottom: 1rem;
 		font-size: var(--font-size-h2);
-		font-weight: 700;
+		font-weight: var(--font-bold);
 	}
 
 	&__line {
@@ -16,7 +16,7 @@
 	&__title {
 		margin-bottom: 2rem;
 		font-size: var(--font-size-h3);
-		font-weight: 700;
+		font-weight: var(--font-bold);
 	}
 
 	&__section {
@@ -37,7 +37,7 @@
 	&__subtitle {
 		margin-bottom: 0.625rem;
 		font-size: var(--font-size-body-lg);
-		font-weight: 700;
+		font-weight: var(--font-bold);
 	}
 
 	&__text {
@@ -110,7 +110,7 @@
 	&__title {
 		margin-bottom: 1.5rem;
 		font-size: var(--font-size-body-lg);
-		font-weight: 700;
+		font-weight: var(--font-bold);
 	}
 
 	&__content {
@@ -125,7 +125,7 @@
 	}
 
 	&__sum {
-		font-weight: 700;
+		font-weight: var(--font-bold);
 		white-space: nowrap;
 	}
 }
@@ -158,7 +158,7 @@
 
 	&__value {
 		font-size: var(--font-size-body);
-		font-weight: 500;
+		font-weight: var(--font-medium);
 		line-height: 1.4;
 		color: var(--black);
 	}
@@ -200,7 +200,7 @@
 
 	&__value {
 		font-size: var(--font-size-body-lg);
-		font-weight: 500;
+		font-weight: var(--font-medium);
 		white-space: nowrap;
 		color: var(--black);
 	}
@@ -210,7 +210,7 @@
 		.order-totals__label,
 		.order-totals__value {
 			font-size: var(--font-size-h3);
-			font-weight: 700;
+			font-weight: var(--font-bold);
 			color: var(--black);
 		}
 	}

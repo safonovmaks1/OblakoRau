@@ -27,7 +27,7 @@
 	&__title {
 		margin-bottom: 1rem;
 		font-size: var(--font-size-h3);
-		font-weight: 400;
+		font-weight: var(--font-regular);
 		color: var(--black);
 
 		&--big {
@@ -86,7 +86,7 @@
 		}
 
 		&__value {
-			font-weight: 400;
+			font-weight: var(--font-regular);
 			color: var(--black);
 		}
 	}

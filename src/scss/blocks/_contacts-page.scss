@@ -21,7 +21,7 @@
 	&__text {
 		margin-bottom: 2.5rem;
 		font-size: var(--font-size-body-lg);
-		font-weight: 400;
+		font-weight: var(--font-regular);
 		color: var(--black);
 	}
 
@@ -41,14 +41,14 @@
 
 	&__item {
 		font-size: var(--font-size-body-lg);
-		font-weight: 400;
+		font-weight: var(--font-regular);
 		line-height: 1.5;
 		color: var(--black);
 
 		& span {
 			display: block;
 			font-size: var(--font-size-small);
-			font-weight: 400;
+			font-weight: var(--font-regular);
 			letter-spacing: 0.1em;
 			text-transform: uppercase;
 			color: var(--gray-400);
@@ -56,7 +56,7 @@
 
 		& a {
 			font-size: var(--font-size-body-lg);
-			font-weight: 400;
+			font-weight: var(--font-regular);
 			line-height: 1.5;
 			text-decoration: none;
 			color: var(--black);

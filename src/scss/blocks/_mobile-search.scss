@@ -118,7 +118,7 @@
 }
 
 .ms-scope-dropdown li.selected {
-	font-weight: 700;
+	font-weight: var(--font-bold);
 	background: #fafafa;
 }
 
@@ -126,7 +126,7 @@
 .ms-btn-find {
 	padding: 10px 20px;
 	font-size: var(--font-size-body);
-	font-weight: 700;
+	font-weight: var(--font-bold);
 	text-transform: uppercase;
 	color: #ffffff;
 	background-color: #3c3c3c;
@@ -163,7 +163,7 @@
 	width: 60px;
 	height: 60px;
 	margin-right: 20px;
-	background: #f0f0f0;
+	background: var(--white-100);
 	object-fit: cover;
 }
 
@@ -180,13 +180,12 @@
 }
 
 .ms-item-title b {
-	font-weight: 900;
-	color: #000000;
+	font-weight: var(--font-bold);
 }
 
 .ms-item-price {
 	font-size: var(--font-size-body);
-	color: #666666;
+	color: var(--gray-500);
 }
 
 .ms-results-footer {

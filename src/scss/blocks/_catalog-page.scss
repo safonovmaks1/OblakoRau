@@ -42,7 +42,7 @@
 
 	&__title {
 		font-size: var(--font-size-body-lg);
-		font-weight: 700;
+		font-weight: var(--font-bold);
 		line-height: 1.2;
 		text-transform: uppercase;
 		color: var(--black);
@@ -128,7 +128,7 @@
 
 		&-title {
 			font-size: var(--font-size-body);
-			font-weight: 700;
+			font-weight: var(--font-bold);
 		}
 
 		& svg {
@@ -154,7 +154,7 @@
 					display: inline-flex;
 
 					@include hover {
-						font-weight: 500;
+						font-weight: var(--font-medium);
 					}
 
 					& a {
@@ -204,9 +204,9 @@
 		}
 
 		&.is-active {
-			font-weight: 500;
-			color: #000000;
-			background-color: #f9f9f9;
+			font-weight: var(--font-medium);
+			color: var(--black);
+			background-color: var(--white-100);
 		}
 	}
 }
