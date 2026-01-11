@@ -6,6 +6,8 @@
 	"scripts": {
 		"dev": "gulp",
 		"build": "gulp --production",
+		"build:docs": "gulp --production --docs",
+		"dev:wp": "gulp --wp",
 		"del": "rm -rf node_modules dist"
 	},
 	"keywords": [

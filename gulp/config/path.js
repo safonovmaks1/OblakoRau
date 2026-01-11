@@ -1,22 +1,33 @@
 import * as nodePath from 'path';
 
+// --- 1. Логика определения папок и режимов ---
 const root_folder = nodePath.basename(nodePath.resolve());
-
 const src_folder = 'src';
-const build_folder = 'dist';
 
-// Папка и путь для разработки и тестирования wordpress проекта
-// const build_folder = `/Applications/MAMP/htdocs/${rootFolder}`;
+// Проверка флагов в командной строке
+const isProd = process.argv.includes('--production');
+const isDev = !isProd;
+const isDocs = process.argv.includes('--docs'); // Флаг для GitHub Pages
+const isWp = process.argv.includes('--wp'); // Флаг для WordPress (опционально)
 
-// Папка и путь для разработки и тестирования github проекта
-// const build_folder = `docs`;
+// Логика выбора папки билда
+let build_folder = 'dist'; // Значение по умолчанию
 
-// Path
+if (isDocs) {
+	build_folder = 'docs';
+} else if (isWp) {
+	build_folder = `/Applications/MAMP/htdocs/${root_folder}`;
+}
+
+// --- 2. Объект настроек ---
+
 export default {
+	// Основные пути и переменные
 	src_folder,
 	build_folder,
 	root_folder,
-	clean: build_folder,
+	isProd,
+	isDev,
 
 	src: {
 		html: [`${src_folder}/pages/*.html`],
@@ -40,4 +51,6 @@ export default {
 		images: `${src_folder}/assets/images/**/*`,
 		icons: `${src_folder}/assets/icons/**/*`,
 	},
+
+	clean: build_folder, // Папка для очистки
 };

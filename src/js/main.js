@@ -1,5 +1,3 @@
-import validationPhone from '../../../OblakoRau--/src/js/modules/tel-validation.js';
-import { test } from './helpers/functions.js';
 import aboutToggle from './modules/about-toggle.js';
 import { initAccordion } from './modules/accordion.js';
 import { adaptiveMenu } from './modules/adaptive-menu.js';
@@ -22,10 +20,9 @@ import { initSizeSelector } from './modules/size-options.js';
 import { initSliders } from './modules/sliders.js';
 import initSort from './modules/sort.js';
 import initTextExpand from './modules/text-expand.js';
+import validationPhone from './modules/validation-phone.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-	test();
-
 	createMobileMenu({
 		menuSelector: '#mainMenu',
 		burgerSelector: '#burgerBtn',
