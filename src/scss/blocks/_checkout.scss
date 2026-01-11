@@ -22,6 +22,10 @@
 	flex-direction: column;
 	gap: 2.5rem;
 
+	&__head {
+		margin-bottom: 1rem;
+	}
+
 	&__block {
 		padding: 2rem;
 		border: var(--border);
