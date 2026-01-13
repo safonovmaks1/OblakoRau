@@ -22,10 +22,6 @@
 	flex-direction: column;
 	gap: 2.5rem;
 
-	&__head {
-		margin-bottom: 1rem;
-	}
-
 	&__block {
 		padding: 2rem;
 		border: var(--border);
@@ -59,6 +55,7 @@
 		display: flex;
 		align-items: center;
 		gap: 2rem;
+		margin-bottom: 1rem;
 		padding-bottom: 0.5rem;
 
 		& .button {
@@ -548,6 +545,10 @@
 }
 
 .checkout-card-modal {
+	& .modal__header {
+		padding: 1.5rem;
+	}
+
 	& .modal__dialog {
 		padding: 0;
 		border-radius: var(--radius);
@@ -592,9 +593,13 @@
 
 		&-left,
 		&-right {
-			padding: 30px 40px;
+			padding: 1.5rem 2rem;
 			border-top: var(--border);
 			border-bottom: var(--border);
+
+			@include respond(md) {
+				border: none;
+			}
 		}
 
 		&-left {
@@ -603,6 +608,10 @@
 
 			& .product-slider {
 				max-width: 400px;
+			}
+
+			@include respond(md) {
+				border: none;
 			}
 		}
 
