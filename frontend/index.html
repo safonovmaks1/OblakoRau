@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="OBLAKO RAI — магазин брендовой одежды и аксессуаров."
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <title>OBLAKO RAI — магазин брендовой одежды</title>
+  </head>
+
+  <body>
+    <div class="site">
+      {{> header}}
+
+      <main class="main">
+        <section class="hero">
+          <div class="container">
+            <p class="hero__eyebrow">OBLAKO RAI / 2026</p>
+
+            <h1 class="hero__title">
+              Новый взгляд<br />
+              на стиль.
+            </h1>
+
+            <p class="hero__description">
+              Коллекция одежды, обуви и аксессуаров.
+            </p>
+
+            <a class="button" href="#catalog">
+              Смотреть коллекцию
+            </a>
+          </div>
+        </section>
+
+        <section class="intro" id="catalog">
+          <div class="container">
+            <p class="intro__label">Наш подход</p>
+            <h2 class="intro__title">
+              Стиль начинается с деталей.
+            </h2>
+          </div>
+        </section>
+      </main>
+
+      {{> footer}}
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

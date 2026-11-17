@@ -1,0 +1,27 @@
+:root {
+  --container-width: 1440px;
+  --container-wide: 1600px;
+  --container-narrow: 960px;
+
+  --container-padding: 32px;
+  --container-padding-mobile: 16px;
+
+  --header-height: 84px;
+  --header-height-mobile: 68px;
+
+  --grid-columns: 12;
+  --grid-gap: 24px;
+  --grid-gap-mobile: 12px;
+
+  --breakpoint-mobile: 640px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1024px;
+  --breakpoint-wide: 1440px;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --container-padding: var(--container-padding-mobile);
+    --grid-gap: var(--grid-gap-mobile);
+  }
+}

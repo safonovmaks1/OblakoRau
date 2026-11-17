@@ -1,0 +1,12 @@
+@use '../tokens';
+
+:root {
+  /* Temporary compatibility aliases */
+  --color-white: var(--palette-white);
+  --color-black: var(--color-text-primary);
+  --color-gray: var(--color-text-secondary);
+
+  --font-main: var(--font-sans);
+
+  --transition-base: var(--duration-base) var(--easing-standard);
+}

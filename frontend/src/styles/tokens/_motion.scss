@@ -1,0 +1,22 @@
+:root {
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --duration-slow: 400ms;
+
+  --easing-standard: ease;
+  --easing-emphasized: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  --transition-base:
+    var(--duration-base) var(--easing-standard);
+
+  --transition-fast:
+    var(--duration-fast) var(--easing-standard);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-base: 0ms;
+    --duration-slow: 0ms;
+  }
+}
